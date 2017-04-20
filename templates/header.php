@@ -19,8 +19,9 @@
           wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'navbar-nav']);
         endif;
         ?>
-        <a class="donate-button" href="<?php the_field('donate_button', 'option'); ?>">Donate Now</a>
       </div>
+      <a class="donate-button" href="<?php the_field('donate_button', 'option'); ?>">Donate Now</a>
+
     </div>
   </nav>
 </header>
