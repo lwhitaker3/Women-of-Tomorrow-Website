@@ -9,19 +9,19 @@ if( $location ): ?>
     <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button> -->
-    <?php $custom_logo_id = get_theme_mod( 'custom_logo' );
-      $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-      if ( has_custom_logo() ) {
-        echo '<a href="'. esc_url( home_url( '/' )) .'" class="brand"> <img src="'. esc_url( $logo[0] ) .'"></a>';
-      } else {
-        echo '<a href="'. esc_url( home_url( '/' )) .'" class="brand">'. get_bloginfo("name") .'</a>';
-      }
-    ?>
-        <?php
+    <?php
+      $image = get_field('logo', 'option');
+      if( !empty($image) ): ?>
+      	<a href= "<?php echo get_home_url(); ?>" class="brand"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+      <?php else: ?>
+        <a href= "<?php echo get_home_url(); ?>" class="brand"><?php bloginfo("name")?></a>
+    <?php endif; ?>
+
+      <?php
         if (has_nav_menu('primary_navigation')) :
           wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'navbar-nav']);
         endif;
-        ?>
+      ?>
         <a class="donate-button" href="<?php the_field('donate_button', 'option'); ?>">Donate Now</a>
 
   </nav>
@@ -40,15 +40,17 @@ if( $location ): ?>
           $all_wp_pages = $my_wp_query->query(array('post_type' => 'page', 'posts_per_page' => '-1'));
 
           // Get the page as an Object
-          $chapter_home =  get_page_by_title('South Florida');
-
+          $chapter_home =  get_page_by_title(get_field('chapter_location'));
 
           $args = array(
             'post_parent' => $chapter_home->ID,
             'post_type'   => 'any',
+            'order'       => 'ASC',
+            'orderby'     => 'title',
             'numberposts' => -1,
             'post_status' => 'any'
           );
+
           $pages = get_children( $args );
           foreach ( $pages as $page ) {
             $option = $page->post_title;
@@ -77,14 +79,13 @@ if( ! $location ): ?>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <?php $custom_logo_id = get_theme_mod( 'custom_logo' );
-      $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-      if ( has_custom_logo() ) {
-        echo '<a href="'. esc_url( home_url( '/' )) .'" class="brand"> <img src="'. esc_url( $logo[0] ) .'"></a>';
-      } else {
-        echo '<a href="'. esc_url( home_url( '/' )) .'" class="brand">'. get_bloginfo("name") .'</a>';
-      }
-    ?>
+    <?php
+      $image = get_field('logo', 'option');
+      if( !empty($image) ): ?>
+      	<a href= "<?php echo get_home_url(); ?>" class="brand"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+      <?php else: ?>
+        <a href= "<?php echo get_home_url(); ?>" class="brand"><?php bloginfo("name")?></a>
+    <?php endif; ?>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <?php

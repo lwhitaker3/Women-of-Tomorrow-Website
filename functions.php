@@ -76,16 +76,28 @@ if( function_exists('acf_add_options_page') ) {
 
 }
 
-// add_action( 'init', 'events_cpt' );
-// function events_cpt() {
-// register_post_type( 'event', array(
-//   'labels' => array(
-//     'name' => 'Events',
-//     'singular_name' => 'Event',
-//    ),
-//   'description' => 'Events',
-//   'public' => true,
-//   'menu_position' => 20,
-//   'supports' => array( 'title', 'editor' )
-// ));
-// }
+add_action( 'init', 'events_cpt' );
+function events_cpt() {
+register_post_type( 'event', array(
+  'labels' => array(
+    'name' => 'Events',
+    'singular_name' => 'Event',
+   ),
+  'description' => 'Events',
+  'public' => true,
+  'menu_position' => 20,
+  'supports' => array( 'title', 'editor' ),
+  'menu_icon'   => 'dashicons-calendar-alt',
+));
+}
+
+
+  add_filter('sage/wrap_base', __NAMESPACE__ . 'sage_wrap_base_cpts'); // Add our function to the sage/wrap_base filter
+
+  function sage_wrap_base_cpts($templates) {
+    $cpt = get_post_type(); // Get the current post type
+    if ($cpt) {
+       array_unshift($templates, 'base-' . $cpt . '.php'); // Shift the template to the front of the array
+    }
+    return $templates; // Return our modified array with base-$cpt.php at the front of the queue
+  }
