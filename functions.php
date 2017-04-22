@@ -74,6 +74,12 @@ if( function_exists('acf_add_options_page') ) {
     'parent_slug'	=> 'theme-general-settings',
   ));
 
+  acf_add_options_sub_page(array(
+    'page_title' 	=> 'Social Media Links',
+    'menu_title'	=> 'Social Media',
+    'parent_slug'	=> 'theme-general-settings',
+  ));
+
 }
 
 add_action( 'init', 'events_cpt' );
@@ -92,12 +98,21 @@ register_post_type( 'event', array(
 }
 
 
-  add_filter('sage/wrap_base', __NAMESPACE__ . 'sage_wrap_base_cpts'); // Add our function to the sage/wrap_base filter
+add_filter('sage/wrap_base', __NAMESPACE__ . 'sage_wrap_base_cpts'); // Add our function to the sage/wrap_base filter
 
-  function sage_wrap_base_cpts($templates) {
-    $cpt = get_post_type(); // Get the current post type
-    if ($cpt) {
-       array_unshift($templates, 'base-' . $cpt . '.php'); // Shift the template to the front of the array
-    }
-    return $templates; // Return our modified array with base-$cpt.php at the front of the queue
+function sage_wrap_base_cpts($templates) {
+  $cpt = get_post_type(); // Get the current post type
+  if ($cpt) {
+     array_unshift($templates, 'base-' . $cpt . '.php'); // Shift the template to the front of the array
   }
+  return $templates; // Return our modified array with base-$cpt.php at the front of the queue
+}
+
+function register_my_menus() {
+  register_nav_menus(
+    array(
+      'footer_menu' => __( 'Footer Menu' ),
+    )
+  );
+}
+add_action( 'init', 'register_my_menus' );

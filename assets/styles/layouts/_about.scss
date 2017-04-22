@@ -1,0 +1,26 @@
+.about_cards{
+  margin-bottom: 50px;
+  .about_card_wrapper{
+    border: $accent-gray 1px solid;
+    border-radius: 2px;
+    margin-bottom: 50px;
+    .about_card_image_wrapper{
+      width: 100%;
+      max-height: 300px;
+      overflow: hidden;
+      img{
+        width: 100%;
+        height: auto;
+        padding: 0;
+      }
+    }
+    h3{
+      padding: 20px 10px 0;
+      text-align: center;
+    }
+    p{
+      padding: 10px 10px 0;
+      text-align: center;
+    }
+  }
+}

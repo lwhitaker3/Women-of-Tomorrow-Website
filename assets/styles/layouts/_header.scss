@@ -14,12 +14,21 @@
 .navbar-nav{
   .menu-item {
     position: relative;
+    padding: 10px 20px;
+    a{
+      color: $white;
+      &:hover{
+        color: $brand-primary;
+        text-decoration: none;
+      }
+    }
     &:hover .sub-menu {
       display: block;
+      li{
+        padding: 0;
+      }
     }
   }
-}
-.navbar-nav{
   .sub-menu {
     display: none;
     position: absolute;
@@ -27,6 +36,8 @@
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    list-style: none;
+    padding: 0;
     a{
       color: black;
       padding: 12px 16px;
@@ -37,4 +48,41 @@
       }
     }
   }
+}
+
+.main-navbar{
+  background-color: transparent;
+  &.headroom--not-top{
+    background-color: white;
+    .brand{
+      img{
+        height: 75px;
+        width: auto;
+      }
+    }
+    a{
+      color: $accent-gray;
+    }
+  }
+  .brand{
+    img{
+      transition: all .5s ease-in;
+      height: 125px;
+      width: auto;
+    }
+  }
+}
+.donate-button{
+  padding: 10px 20px;
+  background-color: $brand-primary;
+  border-radius: 2px;
+  color: $white;
+  &:hover{
+    color: $white;
+    text-decoration: none;
+    background-color: $headings;
+  }
+}
+.menu-right{
+  justify-content: flex-end;
 }

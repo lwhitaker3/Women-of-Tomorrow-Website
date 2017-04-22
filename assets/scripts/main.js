@@ -29,6 +29,8 @@
           }
         });
 
+          console.log($("menu-item.menu-item-has-children").text());
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
