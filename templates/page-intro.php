@@ -9,7 +9,7 @@
 <div class="breadcrumbs-wrapper">
   <div class="container">
     <div class="breadcrumbs">
-      <?php get_breadcrumb(); ?>
+      <?php custom_breadcrumbs(); ?>
     </div>
   </div>
 </div>

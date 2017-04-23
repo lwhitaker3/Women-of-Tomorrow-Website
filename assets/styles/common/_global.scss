@@ -2,7 +2,10 @@ main.main{
   width: 100%;
   padding: 0;
 }
-
+*{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
 
 
 /* Carousel base class */
@@ -94,8 +97,26 @@ p{
   padding: 20px 0;
   .breadcrumbs{
     text-align: right;
+    #breadcrumbs{
+      list-style:none;
+      overflow:hidden;
+      margin: 0;
+      padding: 0;
+      li{
+        display:inline-block;
+        vertical-align:middle;
+        margin-right:5px;
+      }
+      .separator{
+        font-size:18px;
+        font-weight:100;
+        color: $accent-gray;
+      }
+    }
   }
 }
+
+
 
 .page-header{
   text-align: center;

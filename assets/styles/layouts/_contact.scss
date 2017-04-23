@@ -1,0 +1,46 @@
+.connect_section{
+  .icons{
+    .fa{
+      line-height: 60px;
+      font-size: 36px;
+    }
+    i{
+    	background-color:  #33383b;
+    	color: #ffffff;
+    	font-size: 25px;
+    	width: 60px;
+    	height:60px;
+    	border-radius: 50%;
+    	text-align: center;
+    	line-height: 42px;
+    	vertical-align: middle;
+    }
+    a{
+      color: $light-grey;
+    }
+  }
+}
+
+.our_offices{
+  margin-bottom: 50px;
+
+  .contact_card_wrapper{
+    border: $accent-gray 1px solid;
+    border-radius: 2px;
+    margin-bottom: 50px;
+    .contact_card_image_wrapper{
+      width: 100%;
+      max-height: 300px;
+      overflow: hidden;
+      img{
+        width: 100%;
+        height: auto;
+        padding: 0;
+      }
+    }
+    h3{
+      padding: 20px 10px 0;
+      text-align: center;
+    }
+  }
+}

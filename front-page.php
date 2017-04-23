@@ -62,6 +62,22 @@
   <div class="row">
     <div class="col-lg-12">
       <h2>Who We Are</h2>
+      <div class="slider-for">
+        <div><h3>1</h3></div>
+        <div><h3>2</h3></div>
+        <div><h3>3</h3></div>
+        <div><h3>4</h3></div>
+        <div><h3>5</h3></div>
+        <div><h3>6</h3></div>
+      </div>
+      <div class="slider-nav">
+        <div><h3>1</h3></div>
+        <div><h3>2</h3></div>
+        <div><h3>3</h3></div>
+        <div><h3>4</h3></div>
+        <div><h3>5</h3></div>
+        <div><h3>6</h3></div>
+      </div>
       <p>The Women of Tomorrow mission is to inspire, motivate and empower young women to live up to their full potential through a unique mentoring program with highly accomplished professional women and scholarship opportunities.</p>
     </div>
   </div>
