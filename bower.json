@@ -14,6 +14,21 @@
     "slick-carousel": "^1.6.0",
     "parallax.js": "^1.4.2",
     "instafeed.js": "^1.4.1",
-    "masonry": "^4.2.0"
+    "masonry": "^4.2.0",
+    "video.js": "^6.0.1"
+  },
+  "overrides": {
+    "masonry": {
+      "main": [
+        "./dist/masonry.pkgd.js"
+      ],
+      "dependencies": {}
+    },
+    "font-awesome": {
+      "main": [
+        "./scss/font-awesome.scss",
+        "./fonts/*"
+      ]
+    }
   }
 }

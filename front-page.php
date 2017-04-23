@@ -7,42 +7,17 @@
 <?php endwhile; ?>
 
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
+
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
-      <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
-      <div class="container">
-        <div class="carousel-caption d-none d-md-block text-left">
-          <h1>Example headline.</h1>
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-        </div>
-      </div>
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png">
     </div>
     <div class="carousel-item">
-      <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
-      <div class="container">
-        <div class="carousel-caption d-none d-md-block">
-          <h1>Another example headline.</h1>
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-        </div>
-      </div>
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png">
     </div>
     <div class="carousel-item">
-      <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
-      <div class="container">
-        <div class="carousel-caption d-none d-md-block text-right">
-          <h1>One more for good measure.</h1>
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-        </div>
-      </div>
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png">
     </div>
   </div>
   <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
@@ -53,6 +28,15 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-caption d-none d-md-block">
+    <h3>Empowering Young Women for 20 Years</h3>
+    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
+  </div>
 </div>
 
 
@@ -62,26 +46,9 @@
   <div class="row">
     <div class="col-lg-12">
       <h2>Who We Are</h2>
-      <div class="slider-for">
-        <div><h3>1</h3></div>
-        <div><h3>2</h3></div>
-        <div><h3>3</h3></div>
-        <div><h3>4</h3></div>
-        <div><h3>5</h3></div>
-        <div><h3>6</h3></div>
-      </div>
-      <div class="slider-nav">
-        <div><h3>1</h3></div>
-        <div><h3>2</h3></div>
-        <div><h3>3</h3></div>
-        <div><h3>4</h3></div>
-        <div><h3>5</h3></div>
-        <div><h3>6</h3></div>
-      </div>
       <p>The Women of Tomorrow mission is to inspire, motivate and empower young women to live up to their full potential through a unique mentoring program with highly accomplished professional women and scholarship opportunities.</p>
     </div>
   </div>
-
   <div class="row">
     <div class="col-lg-12">
       <h2>What Makes us Unique</h2>
@@ -108,19 +75,26 @@
 
   <div class="row">
     <div class="col-lg-4">
-      <p>4</p>
+      <p id="number1count">4</p>
       <p>Girls Mentored</p>
     </div>
     <div class="col-lg-4">
-      <p>4</p>
+      <p id="number2count">4</p>
       <p>Girls Mentored</p>
     </div>
     <div class="col-lg-4">
-      <p>4</p>
+      <p id="number3count">4</p>
       <p>Girls Mentored</p>
     </div>
   </div>
+</div>
 
+<div class="full-width-image" data-parallax="scroll" data-image-src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png"></div>
+
+<div id="instafeed"></div>
+
+
+<div class="container">
   <div class="row">
     <div class="col-lg-12">
       <h2>Our Results</h2>
@@ -132,11 +106,28 @@
       <ul>
         <li>Result 1</li>
         <li>Result 2</li>
+      </ul>
     </div>
   </div>
 
   <div class="row">
     <div class="col-lg-12">
+      <div class="slider-for">
+        <div><h3>1</h3></div>
+        <div><h3>2</h3></div>
+        <div><h3>3</h3></div>
+        <div><h3>4</h3></div>
+        <div><h3>5</h3></div>
+        <div><h3>6</h3></div>
+      </div>
+      <div class="slider-nav">
+        <div><h3>1</h3></div>
+        <div><h3>2</h3></div>
+        <div><h3>3</h3></div>
+        <div><h3>4</h3></div>
+        <div><h3>5</h3></div>
+        <div><h3>6</h3></div>
+      </div>
       <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
       <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
       <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">

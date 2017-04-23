@@ -1,0 +1,68 @@
+// HOVER EFFECT ON PREV/NEXT BUTTONS
+.carousel-control-next, .carousel-control-prev, .carousel-control-prev:active, .carousel-control-prev:focus, .carousel-control-next:active, .carousel-control-next:focus {
+  opacity: 0;
+  transition: all .5s ease-in;
+}
+.carousel.slide:hover .carousel-control-next, .carousel.slide:hover .carousel-control-prev{
+  opacity: 1;
+
+}
+.carousel-control-prev{
+  left: 20px;
+}
+.carousel-control-next{
+  right: 20px;
+}
+.carousel.slide:hover .carousel-control-prev{
+  left: 0;
+
+}
+.carousel.slide:hover .carousel-control-next{
+  right: 0;
+}
+
+// CAROUSEL
+.carousel.slide{
+  height: 100vh;
+  width: 100%;
+  .carousel-inner{
+    height: 100%;
+  //   width: 100%;
+  //   .carousel-item{
+  //     height: 100%;
+  //     width: auto;
+      img{
+        height: auto;
+        width: 100%;
+      }
+    }
+}
+
+.full-width-image{
+  width: 100%;
+  height: 500px;
+}
+
+.instagram-image{
+  width: 10%;
+  position: relative;
+  display: inline-block;
+  &:hover .likes{
+    opacity: 1;
+  }
+  .likes{
+    position: absolute;
+    background-color: rgba($white,.5);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    padding: 10px;
+    transition: .5s all ease-in;
+  }
+  img{
+    width: 100%;
+  }
+
+}
