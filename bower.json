@@ -15,12 +15,19 @@
     "parallax.js": "^1.4.2",
     "instafeed.js": "^1.4.1",
     "masonry": "^4.2.0",
-    "video.js": "^6.0.1"
+    "imagesloaded": "^4.1.1",
+    "countUp.js": "^1.8.4"
   },
   "overrides": {
     "masonry": {
       "main": [
         "./dist/masonry.pkgd.js"
+      ],
+      "dependencies": {}
+    },
+    "countUp.js": {
+      "main": [
+        "./dist/countUp.js"
       ],
       "dependencies": {}
     },

@@ -100,7 +100,21 @@
       <h2>Our Results</h2>
     </div>
     <div class="col-lg-6">
-      <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+      <a id="videoLink" href="#0" class="video-hp" data-toggle="modal" data-target="#introVideo"><img src="img/someImage.jpg">toggle video</a>
+      <div class="modal fade" id="introVideo" tabindex="-1" role="dialog" aria-labelledby="introductionVideo" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+              <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item allowfullscreen"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-lg-6">
       <ul>
@@ -109,31 +123,61 @@
       </ul>
     </div>
   </div>
+</div>
 
+<div class="container">
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col-md-8 offset-md-2">
       <div class="slider-for">
-        <div><h3>1</h3></div>
-        <div><h3>2</h3></div>
-        <div><h3>3</h3></div>
-        <div><h3>4</h3></div>
-        <div><h3>5</h3></div>
-        <div><h3>6</h3></div>
+        <div><p>1)Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula</p></div>
+        <div><p>2)Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula</p></div>
+        <div><p>3)Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula</p></div>
+        <div><p>4)Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula</p></div>
       </div>
-      <div class="slider-nav">
-        <div><h3>1</h3></div>
-        <div><h3>2</h3></div>
-        <div><h3>3</h3></div>
-        <div><h3>4</h3></div>
-        <div><h3>5</h3></div>
-        <div><h3>6</h3></div>
+    </div>
+    <div class="col-sm-12">
+      <div class="slider slider-nav">
+        <div>
+          <div class="slider-image-wrapper">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png">
+          </div>
+        </div>
+        <div>
+          <div class="slider-image-wrapper">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png">
+          </div>
+        </div>
+        <div>
+          <div class="slider-image-wrapper">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png">
+          </div>
+        </div>
+        <div>
+          <div class="slider-image-wrapper">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png">
+          </div>
+        </div>
+
       </div>
-      <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-      <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-      <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-      <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-      <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+
     </div>
   </div>
+</div>
 
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="sponsors-slider">
+        <div><img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png"></div>
+        <div><img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png"></div>
+        <div><img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png"></div>
+        <div><img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png"></div>
+        <div><img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png"></div>
+        <div><img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png"></div>
+      </div>
+    </div>
+  </div>
 </div>

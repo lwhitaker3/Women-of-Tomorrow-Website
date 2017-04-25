@@ -4,18 +4,8 @@
  */
 ?>
 
-<!-- <?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/page', 'header'); ?>
-  <?php get_template_part('templates/content', 'page'); ?>
+<?php get_template_part('templates/page', 'intro'); ?>
 
-<?php endwhile; ?> -->
-
-<div class="header-image">
-  
-
-</div>
-
-<div class="breadcrumb"><?php get_breadcrumb(); ?></div>
 
 <?php if( have_rows('mentor') ): ?>
 

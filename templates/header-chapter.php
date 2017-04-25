@@ -53,10 +53,13 @@ if( $location ): ?>
 
           $pages = get_children( $args );
           foreach ( $pages as $page ) {
-            $option = $page->post_title;
-            $link = get_post_permalink($page->ID);
-            $output = "<a class='nav-item nav-link' href='". $link . "'>" . $option . "</a>";
-            echo $output;
+            if (get_post_type($page) == 'page'){
+              $option = $page->post_title;
+              $link = get_post_permalink($page->ID);
+              $output = "<a class='nav-item nav-link' href='". $link . "'>" . $option . "</a>";
+              echo $output;
+            }
+
           }
           ?>
       </div>
