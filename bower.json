@@ -16,7 +16,8 @@
     "instafeed.js": "^1.4.1",
     "masonry": "^4.2.0",
     "imagesloaded": "^4.1.1",
-    "countUp.js": "^1.8.4"
+    "countUp.js": "^1.8.4",
+    "waypoints": "^4.0.1"
   },
   "overrides": {
     "masonry": {
@@ -35,6 +36,13 @@
       "main": [
         "./scss/font-awesome.scss",
         "./fonts/*"
+      ]
+    },
+    "waypoints": {
+      "main": [
+        "./lib/jquery.waypoints.js",
+        "./lib/shortcuts/sticky.js",
+        "./lib/shortcuts/inview.js"
       ]
     }
   }

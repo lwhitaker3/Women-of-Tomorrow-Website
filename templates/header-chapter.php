@@ -27,21 +27,25 @@ if( $location ): ?>
   </nav>
 
 
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded" id="primary_navigation">
+  <nav class="chapter-nav navbar navbar-toggleable-md navbar-light bg-faded" id="primary_navigation">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a href="<?php esc_url( home_url( '/' )); ?>" class="brand"><?php echo $location ?></a>
+
+    <?php
+    // Set up the objects needed
+    $my_wp_query = new WP_Query();
+    $all_wp_pages = $my_wp_query->query(array('post_type' => 'page', 'posts_per_page' => '-1'));
+
+    // Get the page as an Object
+    $chapter_home =  get_page_by_title(get_field('chapter_location'));
+    ?>
+
+    <a href="<?php echo get_permalink($chapter_home)?>" class="brand"><?php echo $location ?></a>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
+
           <?php
-          // Set up the objects needed
-          $my_wp_query = new WP_Query();
-          $all_wp_pages = $my_wp_query->query(array('post_type' => 'page', 'posts_per_page' => '-1'));
-
-          // Get the page as an Object
-          $chapter_home =  get_page_by_title(get_field('chapter_location'));
-
           $args = array(
             'post_parent' => $chapter_home->ID,
             'post_type'   => 'any',

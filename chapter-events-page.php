@@ -6,11 +6,7 @@
 
 <?php $location = get_field('chapter_location');?>
 
-<?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/page', 'header'); ?>
-  <?php get_template_part('templates/content', 'page'); ?>
-
-<?php endwhile; ?>
+<?php get_template_part('templates/page', 'intro'); ?>
 
 <div class="container">
   <div class="row">
@@ -26,9 +22,7 @@
       </ul>
 
       <?php
-
       $query = new WP_Query( array( 'post_type' => 'event') );
-
       if ( $query->have_posts() ) : ?>
 
 
@@ -36,7 +30,6 @@
       <div class="tab-content">
         <div class="tab-pane active" id="upcoming" role="tabpanel">
           <?php while ( $query->have_posts() ) : $query->the_post();
-
           $today = date('Ymd');
           $date = get_field('event_date', false, false);
           $eventlocation = get_field('chapter_location');
@@ -56,7 +49,6 @@
         <div class="tab-pane" id="past" role="tabpanel">
 
           <?php while ( $query->have_posts() ) : $query->the_post();
-
           $today = date('Ymd');
           $date = get_field('event_date', false, false);
           $eventlocation = get_field('chapter_location');

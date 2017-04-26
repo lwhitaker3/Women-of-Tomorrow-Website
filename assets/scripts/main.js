@@ -41,6 +41,13 @@
           $grid.masonry('layout');
         });
 
+        if($('.chapter-nav').length) {
+          var sticky = new Waypoint.Sticky({
+            element: $('.chapter-nav')[0]
+          });
+        }
+
+
 
         // $('.grid').masonry({
         //   // set itemSelector so .grid-sizer is not used in layout
@@ -50,15 +57,6 @@
         //   percentPosition: true
         // })
 
-
-      },
-      finalize: function() {
-        // JavaScript to be fired on all pages, after page specific JS is fired
-      }
-    },
-    // Home page
-    'home': {
-      init: function() {
         $('.slider-for').slick({
          slidesToShow: 1,
          slidesToScroll: 1,
@@ -75,6 +73,17 @@
          centerMode: true,
          focusOnSelect: true
         });
+
+
+      },
+      finalize: function() {
+        // JavaScript to be fired on all pages, after page specific JS is fired
+      }
+    },
+    // Home page
+    'home': {
+      init: function() {
+
         $('.sponsors-slider').slick({
           slidesToShow: 4,
           slidesToScroll: 1,
@@ -92,14 +101,25 @@
           prefix : '',
           suffix : ''
         };
-        var counter1 = new CountUp("number1count", 0, 3573, 0, 5, options);
-        counter1.start();
 
-        var counter2 = new CountUp("number2count", 0, 3573, 0, 5, options);
-        counter2.start();
+        var inview = new Waypoint.Inview({
+          element: $('.counter')[0],
+          entered: function(direction) {
+            var counter1 = new CountUp("number1count", 0, 3573, 0, 5, options);
+            counter1.start();
 
-        var counter3 = new CountUp("number3count", 0, 3573, 0, 5, options);
-        counter3.start();
+            var counter2 = new CountUp("number2count", 0, 3573, 0, 5, options);
+            counter2.start();
+
+            var counter3 = new CountUp("number3count", 0, 3573, 0, 5, options);
+            counter3.start();
+
+            inview.disable();
+          }
+
+
+        });
+
 
         var feed = new Instafeed({
           get: 'user',

@@ -73,7 +73,7 @@
     </div><!-- /.col-lg-4 -->
   </div>
 
-  <div class="row">
+  <div class="row counter">
     <div class="col-lg-4">
       <p id="number1count">4</p>
       <p>Girls Mentored</p>
