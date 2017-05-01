@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Events
+ * Template Name: Chapter Events
  */
 ?>
 
@@ -22,7 +22,8 @@
       </ul>
 
       <?php
-      $query = new WP_Query( array( 'post_type' => 'event') );
+      $query = new WP_Query( array( 'post_type' => 'event', 'meta_key'	=> 'event_date', 'orderby'=> 'meta_value_num',
+	     'order'		=> 'DESC') );
       if ( $query->have_posts() ) : ?>
 
 
@@ -36,11 +37,9 @@
           ?>
           <?php if ( $date >= $today && $eventlocation == $location) : ?>
 
-            <div class="entry">
 
               <?php get_template_part('templates/events'); ?>
 
-            </div>
 
           <?php endif; ?>
           <?php endwhile; wp_reset_postdata(); ?>

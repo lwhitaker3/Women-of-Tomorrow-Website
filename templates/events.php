@@ -8,7 +8,12 @@ $time = get_field('event_time');
         <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
         <?php echo $date ?>
         <?php echo $time ?>
-        <?php the_field('event_description'); ?>
+        <?php $description = get_field('event_description');
+          $description = wordwrap($description, 50);
+          $description = explode("\n", $description);
+          $description = $description[0] . '...';
+          echo $description
+        ?>
 
         <?php
 

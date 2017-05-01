@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Chapter About Page
+ * Template Name: Chapter About
  */
 ?>
 

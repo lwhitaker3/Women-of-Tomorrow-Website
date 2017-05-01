@@ -6,90 +6,147 @@
 <?php while (have_posts()) : the_post(); ?>
 <?php endwhile; ?>
 
+<?php
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
+// check if the repeater field has rows of data
+if( have_rows('home_carousel') ):?>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
+    <div class="carousel-inner" role="listbox">
+ 	    <?php while ( have_rows('home_carousel') ) : the_row();?>
+        <?php $image = get_sub_field('image'); ?>
+        <?php if($i==0): ?>
+          <!-- // display a sub field value -->
+          <div class="carousel-item active">
+            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+          </div>
 
-  <div class="carousel-inner" role="listbox">
-    <div class="carousel-item active">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png">
+          <?php $i++ ?>
+
+        <?php else:?>
+          <div class="carousel-item">
+            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+          </div>
+
+        <?php endif?>
+
+
+      <?php endwhile; ?>
+
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-caption d-none d-md-block">
+        <div class="caption-wrapper">
+          <h3><?php the_field('carousel_text_header'); ?></h3>
+          <p><?php the_field('carousel_text'); ?></p>
+        </div>
+      </div>
     </div>
-    <div class="carousel-item">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png">
-    </div>
-    <div class="carousel-item">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-caption d-none d-md-block">
-    <h3>Empowering Young Women for 20 Years</h3>
-    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
-  </div>
 </div>
+
+<?php else :?>
+
+    // no rows found
+
+<?php endif; ?>
+
 
 
 
 <div class="container">
     <!-- Three columns of text below the carousel -->
-  <div class="row">
-    <div class="col-lg-12">
-      <h2>Who We Are</h2>
-      <p>The Women of Tomorrow mission is to inspire, motivate and empower young women to live up to their full potential through a unique mentoring program with highly accomplished professional women and scholarship opportunities.</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-12">
-      <h2>What Makes us Unique</h2>
-    </div>
-    <div class="col-lg-4">
-      <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-      <h3>Heading</h3>
-      <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-    </div><!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-      <h3>Heading</h3>
-      <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-    </div><!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-      <h3>Heading</h3>
-      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-    </div><!-- /.col-lg-4 -->
-  </div>
-
-  <div class="row counter">
-    <div class="col-lg-4">
-      <p id="number1count">4</p>
-      <p>Girls Mentored</p>
-    </div>
-    <div class="col-lg-4">
-      <p id="number2count">4</p>
-      <p>Girls Mentored</p>
-    </div>
-    <div class="col-lg-4">
-      <p id="number3count">4</p>
-      <p>Girls Mentored</p>
+  <div class="row home_intro">
+    <div class="col-lg-8 offset-lg-2" >
+      <p><?php the_field('who_we_are_text'); ?></p>
     </div>
   </div>
 </div>
 
-<div class="full-width-image" data-parallax="scroll" data-image-src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="line-container"><h2>What Makes us Unique</h2></div>
+    </div>
+  </div>
+
+  <div class="row card-row">
+    <div class="col-lg-4">
+      <div class="display-card">
+        <div class="image-wrapper">
+          <?php  $uniquePhoto1 = get_field('what_makes_us_unique_photo_1');
+          if( !empty($uniquePhoto1) ): ?>
+          	<img src="<?php echo $uniquePhoto1['url']; ?>" alt="<?php echo $uniquePhoto1['alt']; ?>" />
+          <?php endif; ?>
+        </div>
+        <h3><?php the_field('what_makes_us_unique_heading_1'); ?></h3>
+        <div class="line-decoration"></div>
+        <p><?php the_field('what_makes_us_unique_text_1'); ?></p>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="display-card">
+        <div class="image-wrapper">
+          <?php  $uniquePhoto2 = get_field('what_makes_us_unique_photo_2');
+          if( !empty($uniquePhoto2) ): ?>
+            <img src="<?php echo $uniquePhoto2['url']; ?>" alt="<?php echo $uniquePhoto2['alt']; ?>" />
+          <?php endif; ?>
+        </div>
+        <h3><?php the_field('what_makes_us_unique_heading_2'); ?></h3>
+        <div class="line-decoration"></div>
+        <p><?php the_field('what_makes_us_unique_text_2'); ?></p>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="display-card">
+        <div class="image-wrapper">
+          <?php  $uniquePhoto3 = get_field('what_makes_us_unique_photo_3');
+          if( !empty($uniquePhoto3) ): ?>
+            <img src="<?php echo $uniquePhoto3['url']; ?>" alt="<?php echo $uniquePhoto3['alt']; ?>" />
+          <?php endif; ?>
+        </div>
+        <h3><?php the_field('what_makes_us_unique_heading_3'); ?></h3>
+        <div class="line-decoration"></div>
+        <p><?php the_field('what_makes_us_unique_text_3'); ?></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="counter-section">
+  <div class="container">
+    <div class="row counter">
+      <div class="number-box col-lg-4">
+        <p class="number" id="number1count" data-counter-number="<?php the_field('counter_number_1'); ?>"></p>
+        <p><?php the_field('counter_number_1_text'); ?></p>
+      </div>
+      <div class="number-box col-lg-4">
+        <p class="number" id="number2count" data-counter-number="<?php the_field('counter_number_2'); ?>"></p>
+        <p><?php the_field('counter_number_2_text'); ?></p>
+      </div>
+      <div class="number-box col-lg-4">
+        <p class="number" id="number3count" data-counter-number="<?php the_field('counter_number_3'); ?>"></p>
+        <p><?php the_field('counter_number_3_text'); ?></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<?php
+$fullWidthImage = get_field('home_page_full_width_photo');
+if( !empty($fullWidthImage) ): ?>
+  <div class="full-width-image" data-parallax="scroll" data-image-src="<?php echo $fullWidthImage['url']; ?>"></div>
+<?php endif; ?>
 
 <div id="instafeed"></div>
 
@@ -97,11 +154,17 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-      <h2>Our Results</h2>
+      <div class="line-container"><h2>Our Results</h2></div>
     </div>
     <div class="col-lg-6">
-      <a id="videoLink" href="#0" class="video-hp" data-toggle="modal" data-target="#introVideo"><img src="img/someImage.jpg">toggle video</a>
-      <div class="modal fade" id="introVideo" tabindex="-1" role="dialog" aria-labelledby="introductionVideo" aria-hidden="true">
+      <a id="videoLink" href="#0" class="video-hp" data-toggle="modal" data-target="#introVideo">
+        <?php
+        $videoThumbnail = get_field('video_thumbnail');
+        if( !empty($videoThumbnail) ): ?>
+        <div class="video-thumbnail"><img src="<?php echo $videoThumbnail['url']; ?>" alt="<?php echo $videoThumbnail['alt']; ?>" /></div>
+        <?php endif; ?>
+      </a>
+      <div class="modal fade" id="introVideo" tabindex="-1" role="dialog" aria-labelledby="introductionVideo" aria-hidden="true" data-video-link="<?php the_field('homepage_video'); ?>">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
@@ -117,48 +180,30 @@
       </div>
     </div>
     <div class="col-lg-6">
-      <ul>
-        <li>Result 1</li>
-        <li>Result 2</li>
-      </ul>
-    </div>
-  </div>
-</div>
+      <?php if( have_rows('results') ): ?>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 offset-md-2">
-      <div class="slider-for">
-        <div><p>1)Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula</p></div>
-        <div><p>2)Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula</p></div>
-        <div><p>3)Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula</p></div>
-        <div><p>4)Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula</p></div>
-      </div>
-    </div>
-    <div class="col-sm-12">
-      <div class="slider slider-nav">
-        <div>
-          <div class="slider-image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png">
-          </div>
-        </div>
-        <div>
-          <div class="slider-image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png">
-          </div>
-        </div>
-        <div>
-          <div class="slider-image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png">
-          </div>
-        </div>
-        <div>
-          <div class="slider-image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png">
-          </div>
-        </div>
+      	<ul class="results">
 
-      </div>
+      	<?php while( have_rows('results') ): the_row();
+
+      		// vars
+      		$title = get_sub_field('title');
+      		$description = get_sub_field('result_information');
+
+      	?>
+
+      		<li class="result">
+
+            <?php echo $title; ?>
+            <?php echo $description; ?>
+
+      		</li>
+
+      	<?php endwhile; ?>
+
+      	</ul>
+
+      <?php endif; ?>
 
     </div>
   </div>
@@ -167,17 +212,60 @@
 
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="sponsors-slider">
-        <div><img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png"></div>
-        <div><img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png"></div>
-        <div><img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png"></div>
-        <div><img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png"></div>
-        <div><img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png"></div>
-        <div><img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png"></div>
+
+
+
+<?php if( have_rows('testimonial') ): ?>
+<div class="testimonial-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+          <div class="slider-for testimonial-quotes-wrapper">
+            <?php while( have_rows('testimonial') ): the_row();
+              // vars
+              $quote = get_sub_field('quote');
+            ?>
+            <div><p><?php echo $quote; ?></p></div>
+            <?php endwhile; ?>
+          </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="slider slider-nav testimonial-people-wrapper">
+          <?php while( have_rows('testimonial') ): the_row();
+            // vars
+            $photo = get_sub_field('photo');
+            $name = get_sub_field('name');
+            $position = get_sub_field('position');
+          ?>
+            <div class="slider-nav-item-wrapper">
+              <div class="slider-image-wrapper">
+                <img src="<?php echo $photo['url']; ?>" alt="<?php echo $photo['alt'] ?>" />
+              </div>
+              <p><?php echo $name; ?></p>
+              <p><?php echo $position; ?></p>
+            </div>
+          <?php endwhile; ?>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<?php endif; ?>
+
+<?php
+
+$sponsors = get_field('sponsors');
+
+if( $sponsors ): ?>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="sponsors-slider">
+          <?php foreach( $sponsors as $sponsor ): ?>
+              <div><img src="<?php echo $sponsor['url']; ?>" alt="<?php echo $sponsor['alt']; ?>" /></div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Chapter Sponsors Page
+ * Template Name: Chapter Sponsors
  */
 ?>
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Mentors Page
+ * Template Name: Chapter Mentors
  */
 ?>
 

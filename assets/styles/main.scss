@@ -13,12 +13,15 @@
 @import "components/forms";
 @import "components/grid";
 @import "components/wp-classes";
+
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";
 @import "layouts/pages";
 @import "layouts/posts";
 @import "layouts/tinymce";
+
+@import "components/slick-carousel";
 
 @import "layouts/front";
 @import "layouts/about";

@@ -1,25 +1,32 @@
-<section class="">
-    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-    <?php echo $date ?>
-    <?php echo $time ?>
-    <?php the_field('event_description'); ?>
 
-    <?php
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9">
+      <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+      <?php echo $date ?>
+      <?php echo $time ?>
+      <?php the_field('event_description'); ?>
 
-    $images = get_field('event_images');
-    $counter = 0;
+      <?php
 
-    if( $images ): ?>
-        <ul>
-            <?php foreach( $images as $image ): ?>
-                <li>
-                    <a href="<?php echo $image['url']; ?>">
-                         <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
-                    </a>
-                    <p><?php echo $image['caption']; ?></p>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    <?php endif; ?>
+      $images = get_field('event_images');
+      $counter = 0;
 
-</section>
+      if( $images ): ?>
+          <ul>
+              <?php foreach( $images as $image ): ?>
+                  <li>
+                      <a href="<?php echo $image['url']; ?>">
+                           <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+                      </a>
+                      <p><?php echo $image['caption']; ?></p>
+                  </li>
+              <?php endforeach; ?>
+          </ul>
+      <?php endif; ?>
+    </div>
+    <div class="col-lg-3">
+      <h3>Upcoming Events</h3>
+    </div>
+  </div>
+</div>

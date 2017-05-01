@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Chapter Team Page
+ * Template Name: Chapter Team
  */
 ?>
 

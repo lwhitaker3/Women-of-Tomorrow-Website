@@ -47,6 +47,19 @@
           });
         }
 
+        $( ".navbar-toggler" ).click(function() {
+          if ($(".navbar-collapse").hasClass("show")){
+            $("#nav-icon").removeClass("open");
+            $("#primary_navigation").removeClass("background");
+            console.log("open");
+          } else {
+            $("#nav-icon").addClass("open");
+            $("#primary_navigation").addClass("background");
+            console.log("close");
+          }
+        });
+
+
 
 
         // $('.grid').masonry({
@@ -105,13 +118,14 @@
         var inview = new Waypoint.Inview({
           element: $('.counter')[0],
           entered: function(direction) {
-            var counter1 = new CountUp("number1count", 0, 3573, 0, 5, options);
+            var counterNumber1 = $( "#number1count" ).data( "counterNumber" );
+            var counter1 = new CountUp("number1count", 0, counterNumber1, 0, 5, options);
             counter1.start();
-
-            var counter2 = new CountUp("number2count", 0, 3573, 0, 5, options);
+            var counterNumber2 = $( "#number2count" ).data( "counterNumber" );
+            var counter2 = new CountUp("number2count", 0, counterNumber2, 0, 5, options);
             counter2.start();
-
-            var counter3 = new CountUp("number3count", 0, 3573, 0, 5, options);
+            var counterNumber3 = $( "#number3count" ).data( "counterNumber" );
+            var counter3 = new CountUp("number3count", 0, counterNumber3, 0, 5, options);
             counter3.start();
 
             inview.disable();
@@ -123,8 +137,8 @@
 
         var feed = new Instafeed({
           get: 'user',
-          userId: '356952992',
-          accessToken: '356952992.1677ed0.3da6d3336a444c08b5d40678e1b20b67',
+          userId: '1371809476',
+          accessToken: '1371809476.1677ed0.9092a9e8d6604f708da1ff0fdfeace10',
           limit: 10,
           template: '<div class="instagram-image"><a href="{{link}}"><img src="{{image}}" /><div class="likes"><i class="fa fa-heart" aria-hidden="true"></i>  {{likes}}</div></a></div>',
         });
@@ -136,7 +150,10 @@
       finalize: function() {
 
         $('#videoLink').click(function () {
-            var src = 'https://www.youtube.com/embed/l5-ThhnVEc4?ecver=2;autoplay=1';
+            var videoLink = $( "#introVideo" ).data( "videoLink" );
+            var splitLink = videoLink.split("=");
+            console.log(splitLink);
+            var src = 'https://www.youtube.com/embed/'+splitLink[1]+'?ecver=2;autoplay=1';
             // $('#introVideo').modal('show'); <-- remove this line
             $('#introVideo iframe').attr('src', src);
         });

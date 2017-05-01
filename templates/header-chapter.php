@@ -5,7 +5,7 @@ if( $location ): ?>
 
 <header class="banner">
 
-  <nav class="navbar navbar-light navbar-toggleable-md bg-faded">
+  <nav class="main-site-top-nav navbar navbar-light navbar-toggleable-md bg-faded">
     <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button> -->
@@ -16,13 +16,20 @@ if( $location ): ?>
       <?php else: ?>
         <a href= "<?php echo get_home_url(); ?>" class="brand"><?php bloginfo("name")?></a>
     <?php endif; ?>
-
-      <?php
-        if (has_nav_menu('primary_navigation')) :
-          wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'navbar-nav']);
-        endif;
-      ?>
+    <div class="menu-right menu-header">
+      <div class="navbar-nav">
+        <div class="menu-list-items">
+          <?php
+          if (has_nav_menu('primary_navigation')) :
+            wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'navbar-nav']);
+          endif;
+          ?>
+        </div>
         <a class="donate-button" href="<?php the_field('donate_button', 'option'); ?>">Donate Now</a>
+
+      </div>
+
+    </div>
 
   </nav>
 
@@ -84,7 +91,11 @@ if( ! $location ): ?>
 
   <nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded main-navbar" id="primary_navigation">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <div id="nav-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </button>
     <?php
       $image = get_field('logo', 'option');
