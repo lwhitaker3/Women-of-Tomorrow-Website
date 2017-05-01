@@ -151,60 +151,62 @@ if( !empty($fullWidthImage) ): ?>
 <div id="instafeed"></div>
 
 
-<div class="container">
+<div class="container results_wrapper">
   <div class="row">
     <div class="col-lg-12">
       <div class="line-container"><h2>Our Results</h2></div>
     </div>
-    <div class="col-lg-6">
-      <a id="videoLink" href="#0" class="video-hp" data-toggle="modal" data-target="#introVideo">
-        <?php
-        $videoThumbnail = get_field('video_thumbnail');
-        if( !empty($videoThumbnail) ): ?>
-        <div class="video-thumbnail"><img src="<?php echo $videoThumbnail['url']; ?>" alt="<?php echo $videoThumbnail['alt']; ?>" /></div>
-        <?php endif; ?>
-      </a>
-      <div class="modal fade" id="introVideo" tabindex="-1" role="dialog" aria-labelledby="introductionVideo" aria-hidden="true" data-video-link="<?php the_field('homepage_video'); ?>">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-              <div class="embed-responsive embed-responsive-16by9">
-                  <iframe class="embed-responsive-item allowfullscreen"></iframe>
+    <div class="middle">
+      <div class="col-lg-6">
+        <a id="videoLink" href="#0" class="video-hp" data-toggle="modal" data-target="#introVideo">
+          <?php
+          $videoThumbnail = get_field('video_thumbnail');
+          if( !empty($videoThumbnail) ): ?>
+          <div class="video-thumbnail"><img src="<?php echo $videoThumbnail['url']; ?>" alt="<?php echo $videoThumbnail['alt']; ?>" /></div>
+          <?php endif; ?>
+        </a>
+        <div class="modal fade" id="introVideo" tabindex="-1" role="dialog" aria-labelledby="introductionVideo" aria-hidden="true" data-video-link="<?php the_field('homepage_video'); ?>">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
+              <div class="modal-body">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item allowfullscreen"></iframe>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-lg-6">
-      <?php if( have_rows('results') ): ?>
+      <div class="col-lg-6">
+        <?php if( have_rows('results') ): ?>
 
-      	<ul class="results">
+        	<div class="results">
 
-      	<?php while( have_rows('results') ): the_row();
+        	<?php while( have_rows('results') ): the_row();
 
-      		// vars
-      		$title = get_sub_field('title');
-      		$description = get_sub_field('result_information');
+        		// vars
+        		$title = get_sub_field('title');
+        		$description = get_sub_field('result_information');
 
-      	?>
+        	?>
 
-      		<li class="result">
+        		<div class="result">
+              <div class="result-icon"><i class="fa fa-check-square-o" aria-hidden="true"></i></div>
+              <p class="result_title"><?php echo $title; ?></p>
+              <p class="result_description"><?php echo $description; ?></p>
 
-            <?php echo $title; ?>
-            <?php echo $description; ?>
+        		</div>
 
-      		</li>
+        	<?php endwhile; ?>
 
-      	<?php endwhile; ?>
+        </div>
 
-      	</ul>
+        <?php endif; ?>
 
-      <?php endif; ?>
-
+      </div>
     </div>
   </div>
 </div>
@@ -233,16 +235,12 @@ if( !empty($fullWidthImage) ): ?>
         <div class="slider slider-nav testimonial-people-wrapper">
           <?php while( have_rows('testimonial') ): the_row();
             // vars
-            $photo = get_sub_field('photo');
             $name = get_sub_field('name');
             $position = get_sub_field('position');
           ?>
             <div class="slider-nav-item-wrapper">
-              <div class="slider-image-wrapper">
-                <img src="<?php echo $photo['url']; ?>" alt="<?php echo $photo['alt'] ?>" />
-              </div>
-              <p><?php echo $name; ?></p>
-              <p><?php echo $position; ?></p>
+              <p class="testimonial-name"><?php echo $name; ?></p>
+              <p class="testimonial-position"><?php echo $position; ?></p>
             </div>
           <?php endwhile; ?>
         </div>

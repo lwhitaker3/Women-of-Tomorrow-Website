@@ -23,13 +23,7 @@ $slick-opacity-not-active: 0.25 !default;
 .slick-slide img {
   width: 100%;
 }
-.slick-slide {
-  opacity: .5;
-  transition: .5s all ease-in;
-}
-.slick-slide.slick-current{
-  opacity: 1;
-}
+
 
 .slick-prev:before,
 .slick-next:before {
@@ -103,6 +97,31 @@ $slick-opacity-not-active: 0.25 !default;
 
 .testimonial-people-wrapper{
   transform: translate(0, -25px);
+  .slider-nav-item-wrapper{
+    margin: auto 5px;
+    padding: 5px;
+    text-align: center;
+    background-color: $white;
+    border: 2px solid $light-grey;
+    border-radius: 3px;
+    p{
+      margin: 0;
+      &.testimonial-name{
+        font-weight: 600;
+      }
+      &.testimonial-position{
+        font-style: italic;
+        font-size: 12px;
+      }
+    }
+  }
+  .slick-slide {
+    opacity: .5;
+    transition: .5s all ease-in;
+  }
+  .slick-slide.slick-current{
+    opacity: 1;
+  }
 }
 .testimonial-quotes-wrapper{
   padding: 50px;

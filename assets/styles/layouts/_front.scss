@@ -36,6 +36,7 @@
     display: inline-block;
     padding: 20px;
     background-color: rgba(0,0,0,.5);
+    border-radius: 3px;
     p{
       margin: 0;
     }
@@ -55,6 +56,7 @@
 .line-container {
   overflow: hidden;
   text-align: center;
+  margin: 50px auto;
   h2 {
     display: inline-block;
     padding: 0 15px;
@@ -77,8 +79,9 @@
     left: 100%;
   }
 }
+
 .card-row{
-  margin: 30px 0;
+  margin-bottom: 50px;
   .display-card{
     img{
       width: 100%;
@@ -122,29 +125,65 @@
   }
 }
 
-.video-thumbnail {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  // margin: 30px;
-
-  &:before {
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    content: "\f04b";
-    font-family: FontAwesome;
-    font-size: 100px;
-    color: #fff;
-    opacity: .8;
-    // text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+.results_wrapper{
+  margin: 50px auto;
+  .middle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   }
-  &:hover:before {
-    color: #eee;
+  .result{
+    margin-bottom: 30px;
+    vertical-align: middle;
+    .result-icon{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: $brand-primary;
+      text-align: center;
+      display: inline-block;
+      i{
+        color: $white;
+        font-size: 28px;
+        line-height: 50px;
+      }
+    }
+    .result_title{
+      font-size: 20px;
+      font-weight: 500;
+      display: inline-block;
+      margin-left: 20px;
+      margin-bottom: 5px;
+    }
+    .result_description{
+      margin-left: 74px;
+    }
+  }
+  .video-thumbnail {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    // margin: 30px;
+    &:before {
+      position:absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      content: "\f04b";
+      font-family: FontAwesome;
+      font-size: 100px;
+      color: #fff;
+      opacity: .8;
+      // text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+    }
+    &:hover:before {
+      color: #eee;
+    }
   }
 }
+
+
 
 .testimonial-wrapper{
   background-color: $lightest-grey;
