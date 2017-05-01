@@ -22,46 +22,46 @@
       </ul>
 
       <?php
-      $query = new WP_Query( array( 'post_type' => 'event', 'meta_key'	=> 'event_date', 'orderby'=> 'meta_value_num',
-	     'order'		=> 'DESC') );
-      if ( $query->have_posts() ) : ?>
+      $upcomingquery = new WP_Query( array( 'post_type' => 'event', 'meta_key'	=> 'event_date', 'orderby'=> 'meta_value_num',
+	     'order' => 'ASC', 'meta_value' => date('Ymd'), 'meta_compare' => '>=') );
+      $pastquery = new WP_Query( array( 'post_type' => 'event', 'meta_key'	=> 'event_date', 'orderby'=> 'meta_value_num',
+       'order' => 'DESC', 'meta_value' => date('Ymd'), 'meta_compare' => '<') );
+       ?>
 
 
       <!-- Tab panes -->
       <div class="tab-content">
         <div class="tab-pane active" id="upcoming" role="tabpanel">
-          <?php while ( $query->have_posts() ) : $query->the_post();
+          <?php
+          if ( $upcomingquery->have_posts() ) :
+          while ( $upcomingquery->have_posts() ) : $upcomingquery->the_post();
           $today = date('Ymd');
           $date = get_field('event_date', false, false);
           $eventlocation = get_field('chapter_location');
           ?>
-          <?php if ( $date >= $today && $eventlocation == $location) : ?>
 
 
               <?php get_template_part('templates/events'); ?>
 
 
-          <?php endif; ?>
           <?php endwhile; wp_reset_postdata(); ?>
-
+          <?php endif; ?>
         </div>
         <div class="tab-pane" id="past" role="tabpanel">
-
-          <?php while ( $query->have_posts() ) : $query->the_post();
+          <?php
+          if ( $pastquery->have_posts() ) :
+          while ( $pastquery->have_posts() ) : $pastquery->the_post();
           $today = date('Ymd');
           $date = get_field('event_date', false, false);
           $eventlocation = get_field('chapter_location');
           ?>
-          <?php if ( $date < $today && $eventlocation == $location) : ?>
 
-            <div class="entry">
 
               <?php get_template_part('templates/events'); ?>
 
-            </div>
 
-          <?php endif; ?>
           <?php endwhile; wp_reset_postdata(); ?>
+          <?php endif; ?>
 
         </div>
       </div>
@@ -73,11 +73,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-	<!-- show pagination here -->
-<?php else : ?>
-	<!-- show 404 error here -->
-<?php endif; ?>
