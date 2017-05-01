@@ -22,10 +22,8 @@
       </ul>
 
       <?php
-      $upcomingquery = new WP_Query( array( 'post_type' => 'event', 'meta_key'	=> 'event_date', 'orderby'=> 'meta_value_num',
-	     'order' => 'ASC', 'meta_value' => date('Ymd'), 'meta_compare' => '>=') );
-      $pastquery = new WP_Query( array( 'post_type' => 'event', 'meta_key'	=> 'event_date', 'orderby'=> 'meta_value_num',
-       'order' => 'DESC', 'meta_value' => date('Ymd'), 'meta_compare' => '<') );
+      $upcomingquery = new WP_Query( array( 'post_type' => 'event', 'orderby'=> 'date_clause',  'order' => 'ASC', 'meta_query' => array('relation'=>'AND', 'date_clause'=> array('key' => 'event_date', 'value' => date('Ymd'), 'compare' => '>=', 'type' => 'DATE'), 'location_clause'=> array('key' =>'chapter_location', 'value' => $location)) ));
+      $pastquery = new WP_Query( array( 'post_type' => 'event', 'orderby'=> 'date_clause',  'order' => 'DESC', 'meta_query' => array('relation'=>'AND', 'date_clause'=> array('key' => 'event_date', 'value' => date('Ymd'), 'compare' => '<', 'type' => 'DATE'), 'location_clause'=> array('key' =>'chapter_location', 'value' => $location)) ));
        ?>
 
 
@@ -35,9 +33,6 @@
           <?php
           if ( $upcomingquery->have_posts() ) :
           while ( $upcomingquery->have_posts() ) : $upcomingquery->the_post();
-          $today = date('Ymd');
-          $date = get_field('event_date', false, false);
-          $eventlocation = get_field('chapter_location');
           ?>
 
 
@@ -51,9 +46,6 @@
           <?php
           if ( $pastquery->have_posts() ) :
           while ( $pastquery->have_posts() ) : $pastquery->the_post();
-          $today = date('Ymd');
-          $date = get_field('event_date', false, false);
-          $eventlocation = get_field('chapter_location');
           ?>
 
 
@@ -70,6 +62,15 @@
     </div>
     <div class="col-lg-4">
       <h2>Featured Event</h2>
+      <div class="featured_event_wrapper">
+        <?php $eventimage = get_field('event_photo');
+        if( !empty($eventimage) ): ?>
+        	<img src="<?php echo $eventimage['url']; ?>" alt="<?php echo $eventimage['alt']; ?>" />
+        <?php endif; ?>
+        <p><?php the_field('event_name'); ?></p>
+        <p><?php the_field('event_date'); ?></p>
+        <p><?php the_field('event_description'); ?></p>
+      </div>
     </div>
   </div>
 </div>

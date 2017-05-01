@@ -49,7 +49,7 @@
   </div>
 </div>
 
-<?php if( have_rows('national_team_members') ): ?>
+<?php if( have_rows('team_members') ): ?>
 <div class="container nat_team_cards">
 
   <div class="row">
@@ -58,7 +58,7 @@
     </div>
   </div>
 
-	<?php while( have_rows('national_team_members') ): the_row();
+	<?php while( have_rows('team_members') ): the_row();
 
 		// vars
 		$image = get_sub_field('photo');
