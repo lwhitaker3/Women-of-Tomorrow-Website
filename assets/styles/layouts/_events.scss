@@ -1,0 +1,106 @@
+.event-excerpt{
+  margin-top: 50px;
+  border-bottom: 1px solid $light-grey;
+  clear: left;
+  .date_wrap{
+    float: left;
+    background-color: $brand-primary;
+    display: inline-block;
+    width: 60px;
+    padding: 5px 0;
+    text-align: center;
+    p{
+      margin: 0;
+      color: $white;
+      &.month{
+
+      }
+      &.day{
+        font-size: 24px;
+        line-height: 24px;
+        font-weight: 600;
+      }
+    }
+  }
+  .event-info-wrap{
+    padding: 0 0 40px 80px;
+    width: 100%;
+    .time, .location{
+      font-weight: 600;
+    }
+    .location{
+      margin-bottom: 0;
+    }
+    .event_images{
+      img{
+        width: 33%;
+      }
+    }
+  }
+  h2 a{
+    font-size: 24px;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+.events-tabs{
+  border-bottom: 1px solid $lightest-grey;
+  .nav-item{
+    border-top: 3px solid transparent;
+    // border-bottom: 2px solid $lightest-grey;
+    .nav-link{
+        border-radius: 0px;
+        border-top: 3px solid transparent;
+        background-color: $lightest-grey;
+        color: $accent-gray;
+      &.active{
+        border-top: 3px solid $brand-primary;
+        background-color: $white;
+        color: $brand-primary;
+        border-left: 1px solid $light-grey;
+        border-right: 1px solid $light-grey;
+        &:hover{
+          border-top: 3px solid $brand-primary;
+          border-left: 1px solid $light-grey;
+          border-right: 1px solid $light-grey;
+        }
+      }
+      &:hover{
+        color: $headings;
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+.featured_event{
+  background-color: $lightest-grey;
+  padding: 20px;
+  margin-bottom: 50px;
+  h3{
+    color: $headings;
+  }
+  .featured_event_wrapper{
+    img{
+      width: 100%;
+      height: auto
+    }
+    h3{
+      color: $accent-gray;
+      margin-top: 10px;
+    }
+    p{
+      margin: 0;
+      &.date{
+        margin-bottom: 10px;
+      }
+    }
+    .line-decoration{
+      width: 50px;
+      border-top: 3px solid $brand-primary;
+      margin: 10px 0;
+    }
+  }
+
+}

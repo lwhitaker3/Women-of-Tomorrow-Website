@@ -29,6 +29,10 @@
           }
         });
 
+        $(function() {
+        	$('.mentor_card_no_photo').matchHeight();
+        });
+
         // init Masonry
         var $grid = $('.grid').masonry({
           itemSelector: '.grid-item,.grid-item-width2',
@@ -143,6 +147,10 @@
           template: '<div class="instagram-image"><a href="{{link}}"><img src="{{image}}" /><div class="likes"><i class="fa fa-heart" aria-hidden="true"></i>  {{likes}}</div></a></div>',
         });
         feed.run();
+
+        $(function() {
+          $('.slider-nav-item-wrapper').matchHeight();
+        });
 
       },
 

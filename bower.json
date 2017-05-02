@@ -17,7 +17,8 @@
     "masonry": "^4.2.0",
     "imagesloaded": "^4.1.1",
     "countUp.js": "^1.8.4",
-    "waypoints": "^4.0.1"
+    "waypoints": "^4.0.1",
+    "matchHeight": "matchheight#^0.7.2"
   },
   "overrides": {
     "masonry": {

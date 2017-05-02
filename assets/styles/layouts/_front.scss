@@ -53,32 +53,7 @@
 }
 
 
-.line-container {
-  overflow: hidden;
-  text-align: center;
-  margin: 50px auto;
-  h2 {
-    display: inline-block;
-    padding: 0 15px;
-    position: relative;
-  }
-  h2:before,
-  h2:after {
-    background: #ddd;
-    content: "";
-    display: block;
-    height: 1px;
-    position: absolute;
-      top: 50%;
-    width: 400%;
-  }
-  h2:before {
-    right: 100%;
-  }
-  h2:after {
-    left: 100%;
-  }
-}
+
 
 .card-row{
   margin-bottom: 50px;
@@ -101,11 +76,7 @@
 
 }
 
-.plain-text-button{
-  &:hover{
-    text-decoration: none;
-  }
-}
+
 
 .counter-section{
   background-color: $lightest-grey;

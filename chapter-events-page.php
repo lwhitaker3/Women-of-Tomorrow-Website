@@ -10,9 +10,9 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-9">
       <!-- Nav tabs -->
-      <ul class="nav nav-tabs" role="tablist">
+      <ul class="events-tabs nav nav-tabs" role="tablist">
         <li class="nav-item">
           <a class="nav-link active" data-toggle="tab" href="#upcoming" role="tab">Upcoming Events</a>
         </li>
@@ -60,16 +60,19 @@
 
 
     </div>
-    <div class="col-lg-4">
-      <h2>Featured Event</h2>
-      <div class="featured_event_wrapper">
-        <?php $eventimage = get_field('event_photo');
-        if( !empty($eventimage) ): ?>
-        	<img src="<?php echo $eventimage['url']; ?>" alt="<?php echo $eventimage['alt']; ?>" />
-        <?php endif; ?>
-        <p><?php the_field('event_name'); ?></p>
-        <p><?php the_field('event_date'); ?></p>
-        <p><?php the_field('event_description'); ?></p>
+    <div class="col-lg-3">
+      <div class="featured_event">
+        <h3>Featured Event</h3>
+        <div class="featured_event_wrapper">
+          <?php $eventimage = get_field('event_photo');
+          if( !empty($eventimage) ): ?>
+          	<img src="<?php echo $eventimage['url']; ?>" alt="<?php echo $eventimage['alt']; ?>" />
+          <?php endif; ?>
+          <h3><?php the_field('event_name'); ?></h3>
+          <div class="line-decoration"></div>
+          <p class="date"><?php the_field('event_date'); ?></p>
+          <p class="description"><?php the_field('event_description'); ?></p>
+        </div>
       </div>
     </div>
   </div>

@@ -1,0 +1,102 @@
+h1.event-title{
+  margin-top: 50px;
+  color: $headings;
+}
+.main-image-wrapper{
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  img{
+    width: 100%;
+  }
+}
+.event_description{
+  margin-top: 20px;
+}
+.event_overview{
+  border: solid 2px $accent-gray;
+  border-radius: 3px;
+  margin-top: 20px;
+  padding: 20px;
+  i{
+    color: $brand-primary;
+    margin-right: 10px;
+  }
+  p{
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 1px solid $light-grey;
+    padding-bottom: 16px;
+  }
+  span{
+    font-weight: 400;
+    margin-top: 0;
+    font-size: 16px;
+  }
+}
+
+.upcoming_events{
+  margin-top: 50px;
+}
+.event_list{
+  margin-top: 20px;
+  border-bottom: 1px solid $light-grey;
+  clear: left;
+  .date_wrap{
+    float: left;
+    background-color: $brand-primary;
+    display: inline-block;
+    width: 60px;
+    padding: 5px 0;
+    text-align: center;
+    p{
+      margin: 0;
+      color: $white;
+      &.month{
+
+      }
+      &.day{
+        font-size: 24px;
+        line-height: 24px;
+        font-weight: 600;
+      }
+    }
+  }
+  .event-info-wrap{
+    padding: 0 0 10px 80px;
+    width: 100%;
+    .time, .location{
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .location{
+      margin-bottom: 0;
+    }
+    .event_images{
+      img{
+        width: 33%;
+      }
+    }
+  }
+  h2 a{
+    font-size: 18px;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+
+.event_gallery{
+  margin: 50px 0;
+  .grid-sizer{ width: 50%; }
+  .grid-item{
+    width: 50%;
+    height: auto;
+    overflow: hidden;
+    padding: 10px;
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+}

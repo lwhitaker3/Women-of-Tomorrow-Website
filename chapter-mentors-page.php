@@ -33,28 +33,29 @@ if( $repeater ): ?>
           <img src="<?php echo $mentor['mentor_photo']['url']; ?>" alt="<?php echo $mentor['mentor_photo']['alt'] ?>" />
         </div>
         <?php if( $mentor['mentor_name'] ): ?>
-          <h3><?php echo $mentor['mentor_name']; ?></h3>
+          <p class="mentor_name"><?php echo $mentor['mentor_name']; ?></p>
         <?php endif; ?>
+				<?php if( $mentor['mentor_linkedin'] ): ?>
+					<a href="<?php echo $mentor['mentor_linkedin']; ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+				<?php endif; ?>
+				<?php if( $mentor['mentor_portfolio'] ): ?>
+					<a href="<?php echo $mentor['mentor_portfolio']; ?>"><i class="fa fa-briefcase" aria-hidden="true"></i></a>
+				<?php endif; ?>
+				<?php if( $mentor['mentor_link'] ): ?>
+					<a href="<?php echo $link; ?>"><i class="fa fa-link" aria-hidden="true"></i></a>
+				<?php endif; ?>
+
+				<div class="line-decoration"></div>
 
         <?php if( $mentor['mentor_company'] ): ?>
           <p><?php echo $mentor['mentor_company']; ?></p>
         <?php endif; ?>
 
         <?php if( $mentor['mentor_position'] ): ?>
-          <p><?php echo $mentor['mentor_position']; ?></p>
+          <p class="position"><?php echo $mentor['mentor_position']; ?></p>
         <?php endif; ?>
 
-        <?php if( $mentor['mentor_linkedin'] ): ?>
-          <a href="<?php echo $mentor['mentor_linkedin']; ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-        <?php endif; ?>
 
-        <?php if( $mentor['mentor_portfolio'] ): ?>
-          <a href="<?php echo $mentor['mentor_portfolio']; ?>"><i class="fa fa-briefcase" aria-hidden="true"></i></a>
-        <?php endif; ?>
-
-        <?php if( $mentor['mentor_link'] ): ?>
-          <a href="<?php echo $link; ?>"><i class="fa fa-link" aria-hidden="true"></i></a>
-        <?php endif; ?>
       </div>
     </div>
 
@@ -65,38 +66,37 @@ if( $repeater ): ?>
   </div>
 
   <div class="row">
-    <h4>Not Pictured</h4>
+		<div class="col-lg-12">
+    	<h4 class="not_pictured_heading">Mentors Not Pictured</h4>
+		</div>
 
 	<?php foreach( $repeater as $i => $mentor ): ?>
 
     <?php if( !$mentor['mentor_photo']): ?>
     <div class="col-lg-3 col-md-4">
-      <div class="mentor_card">
-        <div class="mentor_card_image_wrapper">
-          <img src="<?php echo $mentor['mentor_photo']['url']; ?>" alt="<?php echo $mentor['mentor_photo']['alt'] ?>" />
-        </div>
+      <div class="mentor_card_no_photo">
         <?php if( $mentor['mentor_name'] ): ?>
-          <h3><?php echo $mentor['mentor_name']; ?></h3>
+          <p class="mentor_name"><?php echo $mentor['mentor_name']; ?></p>
         <?php endif; ?>
+
+				<?php if( $mentor['mentor_linkedin'] ): ?>
+					<a href="<?php echo $mentor['mentor_linkedin']; ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+				<?php endif; ?>
+
+				<?php if( $mentor['mentor_portfolio'] ): ?>
+					<a href="<?php echo $mentor['mentor_portfolio']; ?>"><i class="fa fa-briefcase" aria-hidden="true"></i></a>
+				<?php endif; ?>
+
+				<?php if( $mentor['mentor_link'] ): ?>
+					<a href="<?php echo $link; ?>"><i class="fa fa-link" aria-hidden="true"></i></a>
+				<?php endif; ?>
 
         <?php if( $mentor['mentor_company'] ): ?>
           <p><?php echo $mentor['mentor_company']; ?></p>
         <?php endif; ?>
 
         <?php if( $mentor['mentor_position'] ): ?>
-          <p><?php echo $mentor['mentor_position']; ?></p>
-        <?php endif; ?>
-
-        <?php if( $mentor['mentor_linkedin'] ): ?>
-          <a href="<?php echo $mentor['mentor_linkedin']; ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-        <?php endif; ?>
-
-        <?php if( $mentor['mentor_portfolio'] ): ?>
-          <a href="<?php echo $mentor['mentor_portfolio']; ?>"><i class="fa fa-briefcase" aria-hidden="true"></i></a>
-        <?php endif; ?>
-
-        <?php if( $mentor['mentor_link'] ): ?>
-          <a href="<?php echo $link; ?>"><i class="fa fa-link" aria-hidden="true"></i></a>
+          <p class="position"><?php echo $mentor['mentor_position']; ?></p>
         <?php endif; ?>
       </div>
     </div>

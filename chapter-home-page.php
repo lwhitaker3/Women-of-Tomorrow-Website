@@ -25,11 +25,11 @@ if( !empty($image) ): ?>
     <!-- Three columns of text below the carousel -->
   <div class="row">
     <div class="col-lg-12">
-      <h2>Our Chapter</h2>
-      <p><?php the_field('chapter_intro'); ?></p>
+      <div class="line-container"><h2>Our Chapter</h2></div>
+      <div class="intro-text"><?php the_field('chapter_intro'); ?></div>
     </div>
   </div>
-  <div class="row">
+  <div class="row photo_gallery">
     <div class="col-sm-12">
       <?php
         $images = get_field('gallery');
@@ -61,7 +61,7 @@ if( !empty($image) ): ?>
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
-        
+
         </div>
     </div>
   </div>

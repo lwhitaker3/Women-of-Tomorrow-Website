@@ -12,7 +12,7 @@ if( $location ): ?>
     <?php
       $image = get_field('logo', 'option');
       if( !empty($image) ): ?>
-      	<a href= "<?php echo get_home_url(); ?>" class="brand"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+      	<a href= "<?php echo get_home_url(); ?>" class="brand chapter-header"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
       <?php else: ?>
         <a href= "<?php echo get_home_url(); ?>" class="brand"><?php bloginfo("name")?></a>
     <?php endif; ?>
