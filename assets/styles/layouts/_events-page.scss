@@ -11,22 +11,31 @@ h1.event-title{
   }
 }
 .event_description{
-  margin-top: 20px;
+  margin-top: 50px;
+  .line-decoration{
+    width: 50px;
+    border-top: 3px solid $brand-primary;
+    margin: 10px 0;
+  }
 }
 .event_overview{
-  border: solid 2px $accent-gray;
+  border: solid 2px $light-grey;
   border-radius: 3px;
-  margin-top: 20px;
-  padding: 20px;
+  margin-top: 50px;
+  padding: 20px 30px;
   i{
     color: $brand-primary;
-    margin-right: 10px;
+    margin-right: 5px;
   }
   p{
     font-size: 14px;
     font-weight: 600;
     border-bottom: 1px solid $light-grey;
     padding-bottom: 16px;
+    &:last-child{
+      border-bottom: none;
+      padding-bottom: 0px;
+    }
   }
   span{
     font-weight: 400;
@@ -88,6 +97,11 @@ h1.event-title{
 
 .event_gallery{
   margin: 50px 0;
+  .line-decoration{
+    width: 50px;
+    border-top: 3px solid $brand-primary;
+    margin: 10px 0;
+  }
   .grid-sizer{ width: 50%; }
   .grid-item{
     width: 50%;

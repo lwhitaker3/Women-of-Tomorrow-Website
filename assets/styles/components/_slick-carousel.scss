@@ -1,5 +1,5 @@
 $slick-font-family: FontAwesome !default;
-$slick-arrow-color: $accent-gray !default;
+$slick-arrow-color: $accent-grey !default;
 $slick-dot-color: black !default;
 $slick-dot-color-active: $slick-dot-color !default;
 $slick-prev-character: "\f137" !default;
@@ -28,13 +28,14 @@ $slick-opacity-not-active: 0.25 !default;
 .slick-prev:before,
 .slick-next:before {
     color: black;
+    text-align: middle;
 }
 .slick-prev,
 .slick-next {
     position: absolute;
     display: block;
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
     line-height: 0px;
     font-size: 0px;
     cursor: pointer;
@@ -60,9 +61,9 @@ $slick-opacity-not-active: 0.25 !default;
     }
     &:before {
         font-family: $slick-font-family;
-        font-size: 20px;
+        font-size: 40px;
         line-height: 1;
-        color: $slick-arrow-color;
+        color: $white;
         opacity: $slick-opacity-default;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -76,6 +77,8 @@ $slick-opacity-not-active: 0.25 !default;
     }
     &:before {
         content: $slick-prev-character;
+        text-align: center;
+        display: block;
         [dir="rtl"] & {
             content: $slick-next-character;
         }
@@ -89,6 +92,8 @@ $slick-opacity-not-active: 0.25 !default;
     }
     &:before {
         content: $slick-next-character;
+        text-align: center;
+        display: block;
         [dir="rtl"] & {
             content: $slick-prev-character;
         }
@@ -97,13 +102,13 @@ $slick-opacity-not-active: 0.25 !default;
 
 .testimonial-people-wrapper{
   transform: translate(0, -25px);
+  background-color: $headings;
   .slider-nav-item-wrapper{
     margin: auto 5px;
     padding: 5px;
     text-align: center;
     background-color: $white;
-    border: 2px solid $light-grey;
-    border-radius: 3px;
+    border: 2px solid $white;
     p{
       margin: 0;
       &.testimonial-name{
@@ -124,21 +129,49 @@ $slick-opacity-not-active: 0.25 !default;
   }
 }
 .testimonial-quotes-wrapper{
-  padding: 50px;
-  border: 2px solid $light-grey;
-  border-radius: 3px;
+  border: 2px solid $white;
+  position: relative;
+  .quotation-mark-left{
+    position: absolute;
+    top:15px;
+    left:15px;
+    color: $light-grey;
+    font-size: 50px;
+    line-height: 1;
+    opacity: .5;
+  }
+  .quotation-mark-right{
+    position: absolute;
+    bottom:15px;
+    right:15px;
+    color: $light-grey;
+    font-size: 50px;
+    line-height: 1;
+    opacity: .5;
+
+  }
   p{
-    font-size: 20px;
+    font-size: 24px;
     line-height: 40px;
+    color: $white;
+    padding: 80px 50px;
   }
   .slick-arrow{
-    background-color: $lightest-grey;
+    background-color: $headings;
     font-size: 32px;
   }
   .slick-prev{
-    left: -15px;
+    left: -25px;
   }
   .slick-next{
-    right: -15px;
+    right: -25px;
+  }
+}
+.sponsors-slider{
+  img{
+    max-height: 100px;
+    width: auto;
+    display: block;
+    margin: auto;
   }
 }

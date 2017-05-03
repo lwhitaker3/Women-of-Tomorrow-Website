@@ -1,8 +1,8 @@
 footer{
-  background-color: $accent-gray;
+  background-color: $accent-grey;
   color: $white;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   .fa{
     line-height: 38px;
     font-size: 20px;
@@ -28,5 +28,8 @@ footer{
   .footer-nav{
     list-style: none;
     padding: 0;
+  }
+  h3{
+    margin-bottom: 40px;
   }
 }

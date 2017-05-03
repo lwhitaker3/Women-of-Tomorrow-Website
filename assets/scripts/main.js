@@ -64,6 +64,53 @@
         });
 
 
+        if ( $( ".counter" ).length ) {
+
+          var options = {
+            useEasing : true,
+            useGrouping : true,
+            separator : ',',
+            decimal : '.',
+            prefix : '',
+            suffix : ''
+          };
+
+          var inview = new Waypoint.Inview({
+            element: $('.counter')[0],
+            entered: function(direction) {
+              var counterNumber1 = $( "#number1count" ).data( "counterNumber" );
+              var counter1 = new CountUp("number1count", 0, counterNumber1, 0, 5, options);
+              counter1.start();
+              var counterNumber2 = $( "#number2count" ).data( "counterNumber" );
+              var counter2 = new CountUp("number2count", 0, counterNumber2, 0, 5, options);
+              counter2.start();
+              var counterNumber3 = $( "#number3count" ).data( "counterNumber" );
+              var counter3 = new CountUp("number3count", 0, counterNumber3, 0, 5, options);
+              counter3.start();
+
+              inview.disable();
+            }
+
+
+          });
+
+        }
+
+        $('#videoLink').click(function () {
+            var videoLink = $( "#introVideo" ).data( "videoLink" );
+            var splitLink = videoLink.split("=");
+            console.log(splitLink);
+            var src = 'https://www.youtube.com/embed/'+splitLink[1]+'?ecver=2;autoplay=1';
+            // $('#introVideo').modal('show'); <-- remove this line
+            $('#introVideo iframe').attr('src', src);
+        });
+
+
+        $('#introVideo').on('hide.bs.modal', function () {
+          console.log("close");
+            $('#introVideo iframe').removeAttr('src');
+        });
+
 
 
         // $('.grid').masonry({
@@ -110,33 +157,33 @@
           autoplaySpeed: 5000
         });
 
-        var options = {
-          useEasing : true,
-          useGrouping : true,
-          separator : ',',
-          decimal : '.',
-          prefix : '',
-          suffix : ''
-        };
-
-        var inview = new Waypoint.Inview({
-          element: $('.counter')[0],
-          entered: function(direction) {
-            var counterNumber1 = $( "#number1count" ).data( "counterNumber" );
-            var counter1 = new CountUp("number1count", 0, counterNumber1, 0, 5, options);
-            counter1.start();
-            var counterNumber2 = $( "#number2count" ).data( "counterNumber" );
-            var counter2 = new CountUp("number2count", 0, counterNumber2, 0, 5, options);
-            counter2.start();
-            var counterNumber3 = $( "#number3count" ).data( "counterNumber" );
-            var counter3 = new CountUp("number3count", 0, counterNumber3, 0, 5, options);
-            counter3.start();
-
-            inview.disable();
-          }
-
-
-        });
+        // var options = {
+        //   useEasing : true,
+        //   useGrouping : true,
+        //   separator : ',',
+        //   decimal : '.',
+        //   prefix : '',
+        //   suffix : ''
+        // };
+        //
+        // var inview = new Waypoint.Inview({
+        //   element: $('.counter')[0],
+        //   entered: function(direction) {
+        //     var counterNumber1 = $( "#number1count" ).data( "counterNumber" );
+        //     var counter1 = new CountUp("number1count", 0, counterNumber1, 0, 5, options);
+        //     counter1.start();
+        //     var counterNumber2 = $( "#number2count" ).data( "counterNumber" );
+        //     var counter2 = new CountUp("number2count", 0, counterNumber2, 0, 5, options);
+        //     counter2.start();
+        //     var counterNumber3 = $( "#number3count" ).data( "counterNumber" );
+        //     var counter3 = new CountUp("number3count", 0, counterNumber3, 0, 5, options);
+        //     counter3.start();
+        //
+        //     inview.disable();
+        //   }
+        //
+        //
+        // });
 
 
         var feed = new Instafeed({
@@ -157,20 +204,7 @@
 
       finalize: function() {
 
-        $('#videoLink').click(function () {
-            var videoLink = $( "#introVideo" ).data( "videoLink" );
-            var splitLink = videoLink.split("=");
-            console.log(splitLink);
-            var src = 'https://www.youtube.com/embed/'+splitLink[1]+'?ecver=2;autoplay=1';
-            // $('#introVideo').modal('show'); <-- remove this line
-            $('#introVideo iframe').attr('src', src);
-        });
 
-
-        $('#introVideo').on('hide.bs.modal', function () {
-          console.log("close");
-            $('#introVideo iframe').removeAttr('src');
-        });
 
       }
     },

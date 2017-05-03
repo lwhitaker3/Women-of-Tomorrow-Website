@@ -17,6 +17,8 @@
     padding: 10px 20px;
     a{
       color: $white;
+      font-size: 18px;
+      font-weight: 400;
       &:hover{
         color: $brand-primary;
         text-decoration: none;
@@ -43,13 +45,27 @@
       padding: 12px 16px;
       text-decoration: none;
       display: block;
+      font-size: 16px;
+      font-weight: 400;
       &:hover {
         background-color: #f1f1f1
       }
     }
   }
 }
-
+.chapter-nav{
+  border-top: 1px $light-grey solid;
+  .brand{
+    font-size: 40px;
+    font-weight: 600;
+    color: $headings;
+    margin-right: 40px;
+    &:hover{
+      color: $brand-primary;
+      text-decoration: none;
+    }
+  }
+}
 .main-navbar{
   background-color: transparent;
   &.headroom--not-top{
@@ -61,7 +77,7 @@
       }
     }
     a{
-      color: $accent-gray;
+      color: $accent-grey;
     }
     a.donate-button{
       color: $white;
@@ -94,6 +110,7 @@
   background-color: $brand-primary;
   border-radius: 2px;
   color: $white;
+  font-size: 18px;
   &:hover{
     color: $white;
     text-decoration: none;
@@ -129,7 +146,7 @@
 #primary_navigation.background{
   background-color: $white;
   a{
-    color: $accent-gray;
+    color: $accent-grey;
     &:hover{
       color: $brand-primary;
     }
@@ -148,7 +165,7 @@
     flex-direction: row;
   }
   .navbar-nav .menu-item a {
-    color: $accent-gray;
+    color: $accent-grey;
   }
 }
 

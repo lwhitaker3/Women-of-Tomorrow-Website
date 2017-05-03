@@ -64,9 +64,8 @@ if( have_rows('home_carousel') ):?>
 
 
 <div class="container">
-    <!-- Three columns of text below the carousel -->
-  <div class="row home_intro">
-    <div class="col-lg-8 offset-lg-2" >
+  <div class="row page_intro_text">
+    <div class="col-lg-10 offset-lg-1" >
       <p><?php the_field('who_we_are_text'); ?></p>
     </div>
   </div>
@@ -223,11 +222,12 @@ if( !empty($fullWidthImage) ): ?>
     <div class="row">
       <div class="col-md-8 offset-md-2">
           <div class="slider-for testimonial-quotes-wrapper">
+
             <?php while( have_rows('testimonial') ): the_row();
               // vars
               $quote = get_sub_field('quote');
             ?>
-            <div><p><?php echo $quote; ?></p></div>
+            <div><div class="quotation-mark-left"><i class="fa fa-quote-left" aria-hidden="true"></i></div><p><?php echo $quote; ?></p><div class="quotation-mark-right"><i class="fa fa-quote-right" aria-hidden="true"></i></div></div>
             <?php endwhile; ?>
           </div>
       </div>
@@ -255,6 +255,7 @@ if( !empty($fullWidthImage) ): ?>
 $sponsors = get_field('sponsors');
 
 if( $sponsors ): ?>
+<div class="sponsors-wrapper">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
@@ -266,4 +267,5 @@ if( $sponsors ): ?>
       </div>
     </div>
   </div>
+</div>
 <?php endif; ?>

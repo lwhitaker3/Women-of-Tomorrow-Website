@@ -29,7 +29,7 @@ $instagram = get_field('wot_instagram_link', 'option');
         </div>
 
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-3">
         <h3>Links</h3>
         <?php if (has_nav_menu('footer_menu')) :
           wp_nav_menu(['theme_location' => 'footer_menu', 'menu_class' => 'footer-nav']);
@@ -50,7 +50,7 @@ $instagram = get_field('wot_instagram_link', 'option');
           <a href="<?php echo $linkedin ?>"><i class="fa fa-linkedin"></i></a>
         <?php endif; ?>
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-5">
         <h3>Join Us for a Better Tomorrow!</h3>
         <p>Sign up for our newsletter to recieve updates and stay involved</p>
         <a class="btn btn-primary">Subscribe to Newsletter</a>

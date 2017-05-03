@@ -16,6 +16,7 @@
 
           <div class="event_description">
             <h4>Event Description</h4>
+            <div class="line-decoration"></div>
             <?php the_field('event_description'); ?>
           </div>
 
@@ -47,6 +48,7 @@
           if( $images ): ?>
           <div class="event_gallery">
             <h4>Event Gallery</h4>
+            <div class="line-decoration"></div>
             <div class="grid">
               <div class="grid-sizer"></div>
                 <?php foreach( $images as $image ): ?>
