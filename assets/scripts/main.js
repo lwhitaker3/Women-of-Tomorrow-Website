@@ -33,6 +33,10 @@
         	$('.mentor_card_no_photo').matchHeight();
         });
 
+        $(function() {
+          $('.card_text').matchHeight();
+        });
+
         // init Masonry
         var $grid = $('.grid').masonry({
           itemSelector: '.grid-item,.grid-item-width2',

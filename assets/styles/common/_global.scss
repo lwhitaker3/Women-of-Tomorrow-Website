@@ -112,6 +112,11 @@ p{
   padding: 10px 0;
   .breadcrumbs{
     text-align: left;
+    a{
+      &:hover{
+        text-decoration: none;
+      }
+    }
     #breadcrumbs{
       list-style:none;
       overflow:hidden;
@@ -354,4 +359,6 @@ div{
   width: 50px;
   border-top: 3px solid $brand-primary;
   margin: 10px 0;
+  margin: 20px auto;
+  display: block;
 }

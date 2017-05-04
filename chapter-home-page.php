@@ -39,22 +39,22 @@ if( !empty($image) ): ?>
                 <?php foreach( $images as $image ): ?>
                   <?php if($i==0): ?>
                     <div class="grid-item-width2">
-                      <img src="<?php echo $image['sizes']['full']; ?>" alt="<?php echo $image['alt']; ?>" />
+                      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
                     </div>
                     <?php $i++; ?>
                   <?php elseif($i==4): ?>
                     <div class="grid-item-width2">
-                      <img src="<?php echo $image['sizes']['full']; ?>" alt="<?php echo $image['alt']; ?>" />
+                      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
                     </div>
                     <?php $i++; ?>
                   <?php elseif($i==5):?>
                     <div class="grid-item">
-                      <img src="<?php echo $image['sizes']['full']; ?>" alt="<?php echo $image['alt']; ?>" />
+                      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
                     </div>
                     <?php $i==0; ?>
                   <?php else:?>
                     <div class="grid-item">
-                      <img src="<?php echo $image['sizes']['full']; ?>" alt="<?php echo $image['alt']; ?>" />
+                      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
                     </div>
                     <?php $i++; ?>
                   <?php endif; ?>

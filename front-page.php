@@ -153,7 +153,7 @@ if( !empty($fullWidthImage) ): ?>
 <div class="container results_wrapper">
   <div class="row">
     <div class="col-lg-12">
-      <div class="line-container"><h2>Our Results</h2></div>
+      <div class="line-container"><h2>Our Program's Impact</h2></div>
     </div>
     <div class="middle">
       <div class="col-lg-6">
