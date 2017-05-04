@@ -11,7 +11,7 @@
       	   <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
         </div>
       <?php endif; ?>
-      <div class="row">
+      <div class="row container_spacing_bottom">
         <div class="col-lg-8">
 
           <div class="event_description">

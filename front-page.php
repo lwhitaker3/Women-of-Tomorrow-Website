@@ -12,6 +12,7 @@
 if( have_rows('home_carousel') ):?>
   <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
     <div class="carousel-inner" role="listbox">
+      <div class="carousel-overlay"></div>
  	    <?php while ( have_rows('home_carousel') ) : the_row();?>
         <?php $image = get_sub_field('image'); ?>
         <?php if($i==0): ?>
@@ -63,7 +64,7 @@ if( have_rows('home_carousel') ):?>
 
 
 
-<div class="container">
+<div class="container container_spacing">
   <div class="row page_intro_text">
     <div class="col-lg-10 offset-lg-1" >
       <p><?php the_field('who_we_are_text'); ?></p>
@@ -71,51 +72,54 @@ if( have_rows('home_carousel') ):?>
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="line-container"><h2>What Makes us Unique</h2></div>
+<div class="background">
+  <div class="container container_spacing">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="centered">What Makes Us Unique</h2>
+        <div class="heading-underline line-decoration"></div>
+      </div>
     </div>
-  </div>
 
-  <div class="row card-row">
-    <div class="col-lg-4">
-      <div class="display-card">
-        <div class="image-wrapper">
-          <?php  $uniquePhoto1 = get_field('what_makes_us_unique_photo_1');
-          if( !empty($uniquePhoto1) ): ?>
-          	<img src="<?php echo $uniquePhoto1['url']; ?>" alt="<?php echo $uniquePhoto1['alt']; ?>" />
-          <?php endif; ?>
+    <div class="row card-row">
+      <div class="col-lg-4">
+        <div class="display-card">
+          <div class="image-wrapper">
+            <?php  $uniquePhoto1 = get_field('what_makes_us_unique_photo_1');
+            if( !empty($uniquePhoto1) ): ?>
+            	<img src="<?php echo $uniquePhoto1['url']; ?>" alt="<?php echo $uniquePhoto1['alt']; ?>" />
+            <?php endif; ?>
+          </div>
+          <h3><?php the_field('what_makes_us_unique_heading_1'); ?></h3>
+          <div class="line-decoration"></div>
+          <p class="card_text"><?php the_field('what_makes_us_unique_text_1'); ?></p>
         </div>
-        <h3><?php the_field('what_makes_us_unique_heading_1'); ?></h3>
-        <div class="line-decoration"></div>
-        <p><?php the_field('what_makes_us_unique_text_1'); ?></p>
       </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="display-card">
-        <div class="image-wrapper">
-          <?php  $uniquePhoto2 = get_field('what_makes_us_unique_photo_2');
-          if( !empty($uniquePhoto2) ): ?>
-            <img src="<?php echo $uniquePhoto2['url']; ?>" alt="<?php echo $uniquePhoto2['alt']; ?>" />
-          <?php endif; ?>
+      <div class="col-lg-4">
+        <div class="display-card">
+          <div class="image-wrapper">
+            <?php  $uniquePhoto2 = get_field('what_makes_us_unique_photo_2');
+            if( !empty($uniquePhoto2) ): ?>
+              <img src="<?php echo $uniquePhoto2['url']; ?>" alt="<?php echo $uniquePhoto2['alt']; ?>" />
+            <?php endif; ?>
+          </div>
+          <h3><?php the_field('what_makes_us_unique_heading_2'); ?></h3>
+          <div class="line-decoration"></div>
+          <p class="card_text"><?php the_field('what_makes_us_unique_text_2'); ?></p>
         </div>
-        <h3><?php the_field('what_makes_us_unique_heading_2'); ?></h3>
-        <div class="line-decoration"></div>
-        <p><?php the_field('what_makes_us_unique_text_2'); ?></p>
       </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="display-card">
-        <div class="image-wrapper">
-          <?php  $uniquePhoto3 = get_field('what_makes_us_unique_photo_3');
-          if( !empty($uniquePhoto3) ): ?>
-            <img src="<?php echo $uniquePhoto3['url']; ?>" alt="<?php echo $uniquePhoto3['alt']; ?>" />
-          <?php endif; ?>
+      <div class="col-lg-4">
+        <div class="display-card">
+          <div class="image-wrapper">
+            <?php  $uniquePhoto3 = get_field('what_makes_us_unique_photo_3');
+            if( !empty($uniquePhoto3) ): ?>
+              <img src="<?php echo $uniquePhoto3['url']; ?>" alt="<?php echo $uniquePhoto3['alt']; ?>" />
+            <?php endif; ?>
+          </div>
+          <h3><?php the_field('what_makes_us_unique_heading_3'); ?></h3>
+          <div class="line-decoration"></div>
+          <p class="card_text"><?php the_field('what_makes_us_unique_text_3'); ?></p>
         </div>
-        <h3><?php the_field('what_makes_us_unique_heading_3'); ?></h3>
-        <div class="line-decoration"></div>
-        <p><?php the_field('what_makes_us_unique_text_3'); ?></p>
       </div>
     </div>
   </div>
@@ -125,15 +129,15 @@ if( have_rows('home_carousel') ):?>
   <div class="container">
     <div class="row counter">
       <div class="number-box col-lg-4">
-        <p class="number" id="number1count" data-counter-number="<?php the_field('counter_number_1'); ?>"></p>
+        <p class="number" id="number1count" data-counter-number="<?php the_field('counter_number_1'); ?>">0</p>
         <p><?php the_field('counter_number_1_text'); ?></p>
       </div>
       <div class="number-box col-lg-4">
-        <p class="number" id="number2count" data-counter-number="<?php the_field('counter_number_2'); ?>"></p>
+        <p class="number" id="number2count" data-counter-number="<?php the_field('counter_number_2'); ?>">0</p>
         <p><?php the_field('counter_number_2_text'); ?></p>
       </div>
       <div class="number-box col-lg-4">
-        <p class="number" id="number3count" data-counter-number="<?php the_field('counter_number_3'); ?>"></p>
+        <p class="number" id="number3count" data-counter-number="<?php the_field('counter_number_3'); ?>">0</p>
         <p><?php the_field('counter_number_3_text'); ?></p>
       </div>
     </div>
@@ -150,10 +154,11 @@ if( !empty($fullWidthImage) ): ?>
 <div id="instafeed"></div>
 
 
-<div class="container results_wrapper">
+<div class="container results_wrapper container_spacing">
   <div class="row">
     <div class="col-lg-12">
-      <div class="line-container"><h2>Our Program's Impact</h2></div>
+      <h2 class="centered">Our Program's Impact</h2>
+      <div class="heading-underline line-decoration"></div>
     </div>
     <div class="middle">
       <div class="col-lg-6">
@@ -193,7 +198,7 @@ if( !empty($fullWidthImage) ): ?>
         	?>
 
         		<div class="result">
-              <div class="result-icon"><i class="fa fa-check-square-o" aria-hidden="true"></i></div>
+              <div class="result-icon"><i class="ti-check-box" aria-hidden="true"></i></div>
               <p class="result_title"><?php echo $title; ?></p>
               <p class="result_description"><?php echo $description; ?></p>
 
@@ -227,7 +232,7 @@ if( !empty($fullWidthImage) ): ?>
               // vars
               $quote = get_sub_field('quote');
             ?>
-            <div><div class="quotation-mark-left"><i class="fa fa-quote-left" aria-hidden="true"></i></div><p><?php echo $quote; ?></p><div class="quotation-mark-right"><i class="fa fa-quote-right" aria-hidden="true"></i></div></div>
+            <div><div class="quotation-mark-left"><i class="ti-quote-left" aria-hidden="true"></i></div><p><?php echo $quote; ?></p><div class="quotation-mark-right"><i class="ti-quote-right" aria-hidden="true"></i></div></div>
             <?php endwhile; ?>
           </div>
       </div>

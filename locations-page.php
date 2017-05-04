@@ -9,7 +9,7 @@
 <?php if( have_rows('location_info') ): ?>
 
 <div class="container">
-  <div class="row location_cards">
+  <div class="row cards_row">
 
     <?php while( have_rows('location_info') ): the_row();
 
@@ -22,17 +22,18 @@
 
     <div class="col-lg-4">
       <?php if( $link ): ?>
-        <a href="<?php echo $link; ?>">
-      <?php endif; ?>
-      <div class="location_card_wrapper">
-        <div class="location_card_image_wrapper">
-          <?php if($image): ?>
-            	<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+        <a class="card_link" href="<?php echo $link; ?>">
           <?php endif; ?>
-        </div>
-        <h3><?php echo $location; ?></h3>
-      </div>
-      <?php if( $link ): ?>
+          <div class="card_wrapper">
+            <div class="card_image_wrapper">
+              <?php if($image): ?>
+                	<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+              <?php endif; ?>
+            </div>
+            <h3><?php echo $location; ?></h3>
+            <div class="btn btn-secondary">Learn More</div>
+          </div>
+          <?php if( $link ): ?>
         </a>
       <?php endif; ?>
     </div><!-- /.col-lg-4 -->

@@ -128,6 +128,7 @@ $slick-opacity-not-active: 0.25 !default;
     opacity: 1;
   }
 }
+
 .testimonial-quotes-wrapper{
   border: 2px solid $white;
   position: relative;
@@ -136,9 +137,12 @@ $slick-opacity-not-active: 0.25 !default;
     top:15px;
     left:15px;
     color: $light-grey;
-    font-size: 50px;
+    font-size: 100px;
     line-height: 1;
     opacity: .5;
+    i{
+      font-size: 50px;
+    }
   }
   .quotation-mark-right{
     position: absolute;
@@ -148,7 +152,9 @@ $slick-opacity-not-active: 0.25 !default;
     font-size: 50px;
     line-height: 1;
     opacity: .5;
-
+    i{
+      font-size: 50px;
+    }
   }
   p{
     font-size: 24px;

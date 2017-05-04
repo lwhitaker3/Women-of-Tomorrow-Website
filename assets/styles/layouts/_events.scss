@@ -4,7 +4,7 @@
   clear: left;
   .date_wrap{
     float: left;
-    background-color: $brand-primary;
+    background-color: $headings;
     display: inline-block;
     width: 60px;
     padding: 5px 0;
@@ -33,7 +33,7 @@
     }
     .event_images{
       img{
-        width: 33%;
+        width: 30%;
       }
     }
   }
@@ -55,13 +55,13 @@
         background-color: $lightest-grey;
         color: $accent-grey;
       &.active{
-        border-top: 3px solid $brand-primary;
+        border-top: 3px solid $headings;
         background-color: $white;
-        color: $brand-primary;
+        color: $headings;
         border-left: 1px solid $light-grey;
         border-right: 1px solid $light-grey;
         &:hover{
-          border-top: 3px solid $brand-primary;
+          border-top: 3px solid $headings;
           border-left: 1px solid $light-grey;
           border-right: 1px solid $light-grey;
         }
@@ -98,7 +98,7 @@
     }
     .line-decoration{
       width: 50px;
-      border-top: 3px solid $brand-primary;
+      border-top: 3px solid $headings;
       margin: 10px 0;
     }
   }

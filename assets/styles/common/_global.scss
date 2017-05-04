@@ -19,9 +19,6 @@ main.main{
     width: 100%;
   }
 }
-.btn{
-  border-radius: 30px;
-}
 /* Carousel base class */
 .carousel {
   margin-bottom: 4rem;
@@ -48,27 +45,27 @@ main.main{
 h1{
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 36px;
+  font-size: 42px;
 }
 h2{
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 36px;
 }
 h3{
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 30px;
 }
 h4{
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 24px;
 }
 h5{
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
 }
 h6{
   font-family: 'Montserrat', sans-serif;
@@ -77,11 +74,11 @@ h6{
 }
 p{
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   &.lead-in{
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 24px;
   }
   &.caption{
     font-family: 'Roboto-Condensed', sans-serif;
@@ -138,41 +135,87 @@ p{
 
 .cards_row{
   margin-bottom: 50px;
-  .card_wrapper{
-    margin-bottom: 50px;
-    .line-decoration{
-      width: 50px;
-      border-top: 3px solid $brand-primary;
-      margin: 10px 0;
+  .card_link{
+    &:hover{
+      text-decoration: none;
     }
-    .card_image_wrapper{
-      width: 100%;
-      max-height: 300px;
-      overflow: hidden;
-      &:hover img{
-        -moz-transform: scale(1.3);
-        -webkit-transform: scale(1.3);
-        transform: scale(1.3);
+    &:hover img{
+      -moz-transform: scale(1.3);
+      -webkit-transform: scale(1.3);
+      transform: scale(1.3);
+    }
+    &:hover .btn-secondary{
+      border: 2px solid $headings;
+      background-color: $headings;
+      color: $white;
+    }
+    .card_wrapper{
+      margin-bottom: 50px;
+      background-color: $white;
+      .line-decoration{
+        width: 50px;
+        border-top: 3px solid $headings;
+        margin: 10px 0;
       }
-      img{
+      .card_image_wrapper{
         width: 100%;
-        height: auto;
-        padding: 0;
-        -moz-transform: scale(1);
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        -moz-transition: all 0.3s ease-in;
-        -webkit-transition: all 0.3s ease-in;
-        transition: all 0.3s ease-in;
+        height: 300px;
+        overflow: hidden;
+        img{
+          width: 100%;
+          height: auto;
+          padding: 0;
+          -moz-transition: all 0.3s ease-in;
+          -webkit-transition: all 0.3s ease-in;
+          transition: all 0.3s ease-in;
+        }
       }
-    }
-    h3{
-      padding: 20px 0 0;
-    }
-    p{
-      padding: 10px 0 0;
+      h3{
+        padding: 20px 0 0 0;
+        margin-bottom: 0;
+        font-size: 24px;
+        color: $accent-grey;
+      }
+      p{
+        padding: 10px 0 20px;
+        color: $accent-grey;
+      }
+      .btn{
+        margin: 20px 0;
+      }
     }
   }
+}
+
+
+
+.card-row{
+  .display-card{
+    background-color: $white;
+    img{
+      width: 100%;
+    }
+    .line-decoration{
+      width: 50px;
+      border-top: 3px solid $headings;
+      margin: 10px 20px;
+    }
+    .image-wrapper{
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 10px;
+      height: 300px;
+    }
+    h3{
+      padding: 20px 0 0 20px;
+      margin-bottom: 0;
+      font-size: 24px;
+    }
+    p{
+      padding: 10px 20px 40px;
+    }
+  }
+
 }
 
 .plain-text-button{
@@ -181,12 +224,28 @@ p{
     text-decoration: none;
   }
 }
-.btn-secondary{
-  border: 2px solid $brand-primary;
-  color: $brand-primary;
+
+.btn{
+  // border-radius: 30px;
+}
+.btn-primary{
+  border: none;
+  color: $white;
+  background-color: $headings;
+  padding: 10px 20px;
   &:hover{
-    border: 2px solid $brand-primary;
+    border: none;
     background-color: $brand-primary;
+    color: $white;
+  }
+}
+.btn-secondary{
+  border: 2px solid $headings;
+  color: $headings;
+  padding: 10px 20px;
+  &:hover{
+    border: 2px solid $headings;
+    background-color: $headings;
     color: $white;
   }
 }
@@ -269,7 +328,6 @@ div{
 }
 
 .page_intro_text  {
-  margin: 50px;
   p{
     font-size: 24px;
     line-height: 42px;
@@ -279,12 +337,11 @@ div{
 }
 
 .counter-section{
-  background-color: $lightest-grey;
   padding: 48px 0;
   text-align: center;
   .number{
     font-weight: 600;
-    font-size: 42px;
+    font-size: 60px;
     color: $headings;
     margin-bottom: 0;
   }
@@ -294,41 +351,45 @@ div{
   .number-box{
     border-right: 2px solid $light-grey;
   }
+  p{
+    font-weight: 600;
+  }
 }
 
 
 .results_wrapper{
-  margin: 50px auto;
   .middle{
   display: flex;
   align-items: center;
   justify-content: center;
   }
   .result{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     vertical-align: middle;
     .result-icon{
-      width: 50px;
-      height: 50px;
+      float: left;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      background-color: $brand-primary;
+      background-color: $headings;
       text-align: center;
-      display: inline-block;
+      // display: inline-block;
       i{
         color: $white;
-        font-size: 28px;
-        line-height: 50px;
+        font-size: 24px;
+        line-height: 40px;
       }
     }
     .result_title{
       font-size: 20px;
       font-weight: 500;
-      display: inline-block;
+      // display: inline-block;
       margin-left: 20px;
-      margin-bottom: 5px;
+      margin-bottom: 0;
+      margin-left: 64px;
     }
     .result_description{
-      margin-left: 74px;
+      margin-left: 64px;
     }
   }
   .video-thumbnail {
@@ -356,9 +417,39 @@ div{
 }
 
 .heading-underline.line-decoration{
-  width: 50px;
-  border-top: 3px solid $brand-primary;
-  margin: 10px 0;
-  margin: 20px auto;
+  width: 100px;
+  border-top: 4px solid $headings;
+  margin: 10px auto 50px;
   display: block;
+}
+
+.container_spacing{
+  margin: 0 auto;
+  padding: 100px 0;
+}
+.container_spacing_bottom{
+  margin: 0 auto;
+  padding: 0 0 100px 0;
+}
+
+.lead-in{
+  p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+  }
+}
+
+.centered{
+  text-align: center;
+}
+.background{
+  background-color: $lightest-grey;
+}
+
+@include media-breakpoint-down(sm) {
+  .row.row {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

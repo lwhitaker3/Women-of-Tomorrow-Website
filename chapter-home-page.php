@@ -21,14 +21,16 @@ if( !empty($image) ): ?>
 <?php endif; ?>
 
 
-<div class="container">
+<div class="container container_spacing">
     <!-- Three columns of text below the carousel -->
   <div class="row">
-    <div class="col-lg-12">
-      <div class="line-container"><h2>Our Chapter</h2></div>
+    <div class="col-lg-10 offset-lg-1">
+      <h2 class="centered">Our Chapter</h2>
+			<div class="heading-underline line-decoration"></div>
       <div class="intro-text"><?php the_field('chapter_intro'); ?></div>
     </div>
   </div>
+	
   <div class="row photo_gallery">
     <div class="col-sm-12">
       <?php

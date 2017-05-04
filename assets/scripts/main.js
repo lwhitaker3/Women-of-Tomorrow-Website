@@ -19,6 +19,7 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+
         $("#primary_navigation").headroom({
           "offset": 100,
           "tolerance": 5,
@@ -139,8 +140,19 @@
          arrows: false,
          dots: false,
          centerMode: true,
-         focusOnSelect: true
+         focusOnSelect: true,
+         responsive: [
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2
+            }
+          }
+        ]
         });
+
+
 
 
       },

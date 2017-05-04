@@ -10,7 +10,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-9">
+    <div class="col-lg-8">
       <!-- Nav tabs -->
       <ul class="events-tabs nav nav-tabs" role="tablist">
         <li class="nav-item">
@@ -60,7 +60,7 @@
 
 
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-4">
       <div class="featured_event">
         <h3>Featured Event</h3>
         <div class="featured_event_wrapper">

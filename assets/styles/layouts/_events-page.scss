@@ -14,7 +14,7 @@ h1.event-title{
   margin-top: 50px;
   .line-decoration{
     width: 50px;
-    border-top: 3px solid $brand-primary;
+    border-top: 3px solid $headings;
     margin: 10px 0;
   }
 }
@@ -24,7 +24,7 @@ h1.event-title{
   margin-top: 50px;
   padding: 20px 30px;
   i{
-    color: $brand-primary;
+    color: $headings;
     margin-right: 5px;
   }
   p{
@@ -53,7 +53,7 @@ h1.event-title{
   clear: left;
   .date_wrap{
     float: left;
-    background-color: $brand-primary;
+    background-color: $headings;
     display: inline-block;
     width: 60px;
     padding: 5px 0;
@@ -99,7 +99,7 @@ h1.event-title{
   margin: 50px 0;
   .line-decoration{
     width: 50px;
-    border-top: 3px solid $brand-primary;
+    border-top: 3px solid $headings;
     margin: 10px 0;
   }
   .grid-sizer{ width: 50%; }

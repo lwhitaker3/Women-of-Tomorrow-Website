@@ -66,9 +66,9 @@ if( $repeater ): ?>
   </div>
 
   <div class="row">
-		<div class="col-lg-12">
+		<!-- <div class="col-lg-12">
     	<h4 class="not_pictured_heading">Mentors Not Pictured</h4>
-		</div>
+		</div> -->
 
 	<?php foreach( $repeater as $i => $mentor ): ?>
 

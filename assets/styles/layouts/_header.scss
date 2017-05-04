@@ -54,7 +54,7 @@
   }
 }
 .chapter-nav{
-  border-top: 1px $light-grey solid;
+
   .brand{
     font-size: 40px;
     font-weight: 600;
@@ -70,6 +70,7 @@
   background-color: transparent;
   &.headroom--not-top{
     background-color: white;
+    border-bottom: 1px $light-grey solid;
     .brand{
       img{
         height: 75px;
@@ -107,14 +108,13 @@
 }
 .donate-button{
   padding: 10px 20px;
-  background-color: $brand-primary;
-  border-radius: 2px;
+  background-color: $headings;
   color: $white;
   font-size: 18px;
   &:hover{
     color: $white;
     text-decoration: none;
-    background-color: $headings;
+    background-color: $brand-primary;
   }
 }
 .menu-right{
@@ -135,10 +135,15 @@
       }
     }
   }
-  .main-navbar .brand{
-    img{
+  .main-navbar {
+    .brand{
+      img{
+        height: 75px;
+        width: auto;
+      }
+    }
+    .navbar-toggler {
       height: 75px;
-      width: auto;
     }
   }
 }
@@ -160,6 +165,7 @@
 }
 
 .main-site-top-nav{
+  border-bottom: 1px $light-grey solid;
   &.navbar {
     align-items: center;
     flex-direction: row;
@@ -174,8 +180,8 @@
 }
 
 #nav-icon {
-  width: 40px;
-  height: 29px;
+  width: 26px;
+  height: 20px;
   position: relative;
   // margin: 50px auto;
   -webkit-transform: rotate(0deg);
@@ -192,10 +198,9 @@
 #nav-icon span {
   display: block;
   position: absolute;
-  height: 5px;
+  height: 3px;
   width: 100%;
-  background: $brand-primary;
-  border-radius: 4px;
+  background: $headings;
   opacity: 1;
   left: 0;
   -webkit-transform: rotate(0deg);
@@ -217,7 +222,7 @@
 }
 
 #nav-icon span:nth-child(2) {
-  top: 12px;
+  top: 8px;
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -o-transform-origin: left center;
@@ -225,7 +230,7 @@
 }
 
 #nav-icon span:nth-child(3) {
-  top: 24px;
+  top: 16px;
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -o-transform-origin: left center;
@@ -238,7 +243,7 @@
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
   top: -2px;
-  left: 8px;
+  left: 4px;
 }
 
 #nav-icon.open span:nth-child(2) {
@@ -251,6 +256,6 @@
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  top: 26px;
-  left: 8px;
+  top: 16px;
+  left: 4px;
 }

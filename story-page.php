@@ -9,10 +9,10 @@
 
 
 
-<div class="container">
+<div class="container container_spacing_bottom">
 
   <div class="row intro-story">
-    <div class="col-md-6 story-image-wrapper">
+    <div class="col-md-6 story-image-wrapper-intro">
       <?php
         $intro_image = get_field('intro_image_story');
 
@@ -23,15 +23,16 @@
         <?php endif; ?>
     </div>
     <div class="col-md-6">
-      <p><?php the_field('who_we_are_text'); ?></p>
+      <div class="lead-in"><?php the_field('who_we_are_text'); ?></div>
     </div>
   </div>
 </div>
 
-<div class="container">
+<div class="container container_spacing_bottom">
   <div class="row">
     <div class="col-md-12">
-      <div class="line-container"><h2>Our History</h2></div>
+      <h2 class="centered">Our History</h2>
+      <div class="heading-underline line-decoration"></div>
     </div>
   </div>
 
@@ -107,10 +108,11 @@
 <?php endif; ?>
 
 
-<div class="container">
+<div class="container container_spacing_bottom">
   <div class="row">
     <div class="col-md-12">
-      <div class="line-container"><h2>Our Founders</h2></div>
+      <h2 class="centered">Our Founders</h2>
+      <div class="heading-underline line-decoration"></div>
     </div>
   </div>
 

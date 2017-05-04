@@ -14,7 +14,7 @@ $instagram = get_field('wot_instagram_link', 'option');
 <footer class="content-info">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4">
+      <div class="col-lg-5">
         <h3>Women of Tomorrow</h3>
         <div>
           <p><i class="fa fa-map-marker"></i> <?php echo $address ?></p>
@@ -28,12 +28,6 @@ $instagram = get_field('wot_instagram_link', 'option');
           <p><i class="fa fa-envelope"></i><a href="mailto:<?php echo $email ?>"> <?php echo $email ?></a></p>
         </div>
 
-      </div>
-      <div class="col-lg-3">
-        <h3>Links</h3>
-        <?php if (has_nav_menu('footer_menu')) :
-          wp_nav_menu(['theme_location' => 'footer_menu', 'menu_class' => 'footer-nav']);
-        endif; ?>
         <?php if ($facebook): ?>
           <a href="<?php echo $facebook ?>"><i class="fa fa-facebook"></i></a>
         <?php endif; ?>
@@ -49,6 +43,14 @@ $instagram = get_field('wot_instagram_link', 'option');
         <?php if ($linkedin): ?>
           <a href="<?php echo $linkedin ?>"><i class="fa fa-linkedin"></i></a>
         <?php endif; ?>
+
+      </div>
+      <div class="col-lg-2">
+        <h3>Links</h3>
+        <?php if (has_nav_menu('footer_menu')) :
+          wp_nav_menu(['theme_location' => 'footer_menu', 'menu_class' => 'footer-nav']);
+        endif; ?>
+
       </div>
       <div class="col-lg-5">
         <h3>Join Us for a Better Tomorrow!</h3>
