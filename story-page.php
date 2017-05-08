@@ -7,28 +7,34 @@
 
 <?php get_template_part('templates/page', 'intro'); ?>
 
+<div class="background">
+  <div class="container">
+    <?php while (have_posts()) : the_post(); ?>
+      <?php get_template_part('templates/page', 'header'); ?>
+    <?php endwhile; ?>
+  </div>
 
+  <div class="container container_spacing_bottom">
 
-<div class="container container_spacing_bottom">
+    <div class="row intro-story">
+      <div class="col-md-6 story-image-wrapper-intro">
+        <?php
+          $intro_image = get_field('intro_image_story');
 
-  <div class="row intro-story">
-    <div class="col-md-6 story-image-wrapper-intro">
-      <?php
-        $intro_image = get_field('intro_image_story');
+          if( !empty($intro_image) ): ?>
 
-        if( !empty($intro_image) ): ?>
+          	<img src="<?php echo $intro_image['url']; ?>" alt="<?php echo $intro_image['alt']; ?>" />
 
-        	<img src="<?php echo $intro_image['url']; ?>" alt="<?php echo $intro_image['alt']; ?>" />
-
-        <?php endif; ?>
-    </div>
-    <div class="col-md-6">
-      <div class="lead-in"><?php the_field('who_we_are_text'); ?></div>
+          <?php endif; ?>
+      </div>
+      <div class="col-md-6">
+        <div class="lead-in"><?php the_field('who_we_are_text'); ?></div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="container container_spacing_bottom">
+<div class="container container_spacing_bottom margin-top">
   <div class="row">
     <div class="col-md-12">
       <h2 class="centered">Our History</h2>
@@ -108,7 +114,7 @@
 <?php endif; ?>
 
 
-<div class="container container_spacing_bottom">
+<div class="container container_spacing_bottom margin-top">
   <div class="row">
     <div class="col-md-12">
       <h2 class="centered">Our Founders</h2>

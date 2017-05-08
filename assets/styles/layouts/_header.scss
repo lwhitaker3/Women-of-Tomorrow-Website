@@ -16,7 +16,7 @@
     position: relative;
     padding: 10px 20px;
     a{
-      color: $white;
+      color: $accent-grey;
       font-size: 18px;
       font-weight: 400;
       &:hover{
@@ -67,10 +67,14 @@
   }
 }
 .main-navbar{
-  background-color: transparent;
+  background-color: $white;
   &.headroom--not-top{
     background-color: white;
-    border-bottom: 1px $light-grey solid;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
     .brand{
       img{
         height: 75px;
@@ -106,11 +110,19 @@
     }
   }
 }
+.main-home-navbar{
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+  -ms-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+  -o-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+}
 .donate-button{
   padding: 10px 20px;
   background-color: $headings;
   color: $white;
   font-size: 18px;
+  border-radius: .25rem;
   &:hover{
     color: $white;
     text-decoration: none;

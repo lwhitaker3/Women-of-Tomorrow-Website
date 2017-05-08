@@ -7,9 +7,13 @@
     height: 500px;
     overflow: hidden;
     padding: 10px;
-    img{
+
+    padding: 10px;
+    div{
       width: 100%;
-      height: auto;
+      height: 100%;
+      background-position: center center;
+      background-size: cover;
     }
   }
 
@@ -18,9 +22,28 @@
     height: 250px;
     overflow: hidden;
     padding: 10px;
-    img{
+
+    div{
       width: 100%;
-      height: auto;
+      height: 100%;
+      background-position: center center;
+      background-size: cover;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .photo_gallery{
+    .grid-sizer{ width: 50%; }
+
+    .grid-item-width2{
+      width: 50%;
+      height: 250px;
+    }
+
+    .grid-item{
+      width: 50%;
+      height: 250px;
     }
   }
 }

@@ -1,3 +1,8 @@
+<?php
+  do_action('get_header');
+  get_template_part('templates/header-chapter');
+?>
+
 <div class="header-image-wrapper">
   <?php $image = get_field('page_hero_image');
   if( !empty($image) ): ?>
@@ -12,10 +17,4 @@
       <?php custom_breadcrumbs(); ?>
     </div>
   </div>
-</div>
-
-<div class="container">
-  <?php while (have_posts()) : the_post(); ?>
-    <?php get_template_part('templates/page', 'header'); ?>
-  <?php endwhile; ?>
 </div>

@@ -19,9 +19,9 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
-
-        $("#primary_navigation").headroom({
-          "offset": 100,
+        var nav = $("#primary_navigation");
+        nav.headroom({
+          "offset": nav.offset().top,
           "tolerance": 5,
           "classes": {
             "initial": "animated",
@@ -53,6 +53,25 @@
         if($('.chapter-nav').length) {
           var sticky = new Waypoint.Sticky({
             element: $('.chapter-nav')[0]
+          });
+        }
+
+        if($('.main-home-navbar').length) {
+          var sticky2 = new Waypoint.Sticky({
+            element: $('.main-home-navbar')[0],
+            handler: function() {
+              console.log('YAY');
+              // $("#primary_navigation").headroom({
+              //   "offset": 0,
+              //   "tolerance": 5,
+              //   "classes": {
+              //     "initial": "animated",
+              //     "pinned": "slideDown",
+              //     "unpinned": "slideUp"
+              //   }
+              // });
+              jQuery(window).trigger('resize').trigger('scroll');
+            }
           });
         }
 

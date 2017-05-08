@@ -11,6 +11,11 @@
 <?php endwhile; ?> -->
 
 <?php
+  do_action('get_header');
+  get_template_part('templates/header-chapter');
+?>
+
+<?php
 
 $image = get_field('chapter_main_image');
 
@@ -27,10 +32,10 @@ if( !empty($image) ): ?>
     <div class="col-lg-10 offset-lg-1">
       <h2 class="centered">Our Chapter</h2>
 			<div class="heading-underline line-decoration"></div>
-      <div class="intro-text"><?php the_field('chapter_intro'); ?></div>
+      <div class="lead-in"><?php the_field('chapter_intro'); ?></div>
     </div>
   </div>
-	
+
   <div class="row photo_gallery">
     <div class="col-sm-12">
       <?php
@@ -41,22 +46,27 @@ if( !empty($image) ): ?>
                 <?php foreach( $images as $image ): ?>
                   <?php if($i==0): ?>
                     <div class="grid-item-width2">
-                      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+											<div style="background-image: url('<?php echo $image['url']; ?>')">
+											</div>
+                      <!-- <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /> -->
                     </div>
                     <?php $i++; ?>
                   <?php elseif($i==4): ?>
                     <div class="grid-item-width2">
-                      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+											<div style="background-image: url('<?php echo $image['url']; ?>')">
+											</div>
                     </div>
                     <?php $i++; ?>
                   <?php elseif($i==5):?>
                     <div class="grid-item">
-                      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+											<div style="background-image: url('<?php echo $image['url']; ?>')">
+											</div>
                     </div>
                     <?php $i==0; ?>
                   <?php else:?>
                     <div class="grid-item">
-                      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+											<div style="background-image: url('<?php echo $image['url']; ?>')">
+											</div>
                     </div>
                     <?php $i++; ?>
                   <?php endif; ?>

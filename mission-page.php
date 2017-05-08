@@ -7,15 +7,23 @@
 
 <?php get_template_part('templates/page', 'intro'); ?>
 
-<div class="container container_spacing_bottom">
-  <div class="row page_intro_text">
-    <div class="col-lg-10 offset-lg-1" >
-      <p><?php the_field('mission_intro_text'); ?></p>
+<div class="background">
+  <div class="container">
+    <?php while (have_posts()) : the_post(); ?>
+      <?php get_template_part('templates/page', 'header'); ?>
+    <?php endwhile; ?>
+  </div>
+
+  <div class="container container_spacing_bottom">
+    <div class="row page_intro_text">
+      <div class="col-lg-10 offset-lg-1" >
+        <p><?php the_field('mission_intro_text'); ?></p>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="counter-section background">
+<div class="counter-section">
   <div class="container">
     <div class="row counter">
       <div class="number-box col-lg-4">
@@ -112,7 +120,7 @@ if( !empty($fullWidthImage) ): ?>
               // vars
               $quote = get_sub_field('quote');
             ?>
-            <div><div class="quotation-mark-left"><i class="ti-quote-left" aria-hidden="true"></i></div><p><?php echo $quote; ?></p><div class="quotation-mark-right"><i class="ti-quote-right" aria-hidden="true"></i></div></div>
+            <div><div class="quotation-mark-left"><i class="icon-quotes-left" aria-hidden="true"></i></div><p><?php echo $quote; ?></p><div class="quotation-mark-right"><i class="icon-quotes-right" aria-hidden="true"></i></div></div>
             <?php endwhile; ?>
           </div>
       </div>

@@ -17,15 +17,13 @@ if( have_rows('home_carousel') ):?>
         <?php $image = get_sub_field('image'); ?>
         <?php if($i==0): ?>
           <!-- // display a sub field value -->
-          <div class="carousel-item active">
-            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+          <div class="carousel-item active" style="background-image: url('<?php echo $image['url']; ?>')">
           </div>
 
           <?php $i++ ?>
 
         <?php else:?>
-          <div class="carousel-item">
-            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+          <div class="carousel-item" style="background-image: url('<?php echo $image['url']; ?>')">
           </div>
 
         <?php endif?>
@@ -48,6 +46,7 @@ if( have_rows('home_carousel') ):?>
       </ol>
       <div class="carousel-caption d-none d-md-block">
         <div class="caption-wrapper">
+          <p>Women of Tomorrow</p>
           <h3><?php the_field('carousel_text_header'); ?></h3>
           <p><?php the_field('carousel_text'); ?></p>
         </div>
@@ -60,6 +59,11 @@ if( have_rows('home_carousel') ):?>
     // no rows found
 
 <?php endif; ?>
+
+<?php
+  do_action('get_header');
+  get_template_part('templates/header');
+?>
 
 
 
@@ -199,7 +203,7 @@ if( !empty($fullWidthImage) ): ?>
 
         		<div class="result">
               <div class="result-icon"><i class="ti-check-box" aria-hidden="true"></i></div>
-              <p class="result_title"><?php echo $title; ?></p>
+              <h3 class="result_title"><?php echo $title; ?></h3>
               <p class="result_description"><?php echo $description; ?></p>
 
         		</div>
@@ -232,7 +236,7 @@ if( !empty($fullWidthImage) ): ?>
               // vars
               $quote = get_sub_field('quote');
             ?>
-            <div><div class="quotation-mark-left"><i class="ti-quote-left" aria-hidden="true"></i></div><p><?php echo $quote; ?></p><div class="quotation-mark-right"><i class="ti-quote-right" aria-hidden="true"></i></div></div>
+            <div><div class="quotation-mark-left"><i class="icon-quotes-left" aria-hidden="true"></i></div><p><?php echo $quote; ?></p><div class="quotation-mark-right"><i class="icon-quotes-right" aria-hidden="true"></i></div></div>
             <?php endwhile; ?>
           </div>
       </div>

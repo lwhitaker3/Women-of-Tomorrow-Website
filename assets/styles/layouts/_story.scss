@@ -24,8 +24,6 @@
 #cd-timeline {
   position: relative;
   padding: 2em 0;
-  margin-top: 2em;
-  margin-bottom: 2em;
 }
 #cd-timeline::before {
   /* this is the vertical line */
@@ -38,10 +36,6 @@
   background: $light-grey;
 }
 @media only screen and (min-width: 1170px) {
-  #cd-timeline {
-    margin-top: 3em;
-    margin-bottom: 3em;
-  }
   #cd-timeline::before {
     left: 50%;
     margin-left: -2px;
@@ -175,7 +169,9 @@
   background: white;
   border-radius: 0.25em;
   padding: 1em;
-  box-shadow: 0 2px 0 $headings;
+  -webkit-box-shadow: 0px 10px 20px -12px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: 0px 10px 20px -12px rgba(0, 0, 0, 0.18);
+  box-shadow: 0px 10px 20px -12px rgba(0, 0, 0, 0.18);
 }
 .cd-timeline-content:after {
   content: "";
