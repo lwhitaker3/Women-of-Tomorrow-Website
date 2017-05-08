@@ -1,46 +1,44 @@
 .connect_section{
   .icons{
+    text-align: center;
     .fa{
-      line-height: 60px;
-      font-size: 36px;
+      line-height: 80px;
+      font-size: 50px;
+      margin: 0 20px;
     }
     i{
-    	background-color:  #33383b;
-    	color: #ffffff;
-    	font-size: 25px;
-    	width: 60px;
-    	height:60px;
+    	background-color:  $accent-grey;
+    	color: $white;
+    	width: 80px;
+    	height: 80px;
     	border-radius: 50%;
     	text-align: center;
-    	line-height: 42px;
-    	vertical-align: middle;
-    }
-    a{
-      color: $light-grey;
+      &:hover{
+        color: $brand-primary;
+      }
     }
   }
 }
 
-.our_offices{
-  margin-bottom: 50px;
-
-  .contact_card_wrapper{
-    border: $accent-grey 1px solid;
-    border-radius: 2px;
-    margin-bottom: 50px;
-    .contact_card_image_wrapper{
-      width: 100%;
-      max-height: 300px;
-      overflow: hidden;
-      img{
-        width: 100%;
-        height: auto;
-        padding: 0;
+@include media-breakpoint-down(sm) {
+  .connect_section{
+    .icons{
+      .fa{
+        line-height: 50px;
+        font-size: 32px;
+        margin: 0 10px;
       }
-    }
-    h3{
-      padding: 20px 10px 0;
-      text-align: center;
+      i{
+      	background-color:  $accent-grey;
+      	color: $white;
+      	width: 50px;
+      	height: 50px;
+      	border-radius: 50%;
+      	text-align: center;
+        &:hover{
+          color: $brand-primary;
+        }
+      }
     }
   }
 }

@@ -94,7 +94,7 @@ p{
 }
 .breadcrumbs-wrapper{
   background-color: $white;
-  padding: 10px 0;
+  padding: 20px 0;
   .breadcrumbs{
     text-align: left;
     a{
@@ -125,6 +125,9 @@ p{
 
 .cards_row{
   padding-bottom: 50px;
+  &.padding-bottom-0{
+    padding-bottom: 0px;
+  }
   .card_link{
 
     &:hover{
@@ -181,6 +184,9 @@ p{
       .btn{
         margin: 0 0 20px 20px;
       }
+      .margin-bottom-50{
+        margin-bottom: 50px;
+      }
     }
   }
 }
@@ -188,14 +194,16 @@ p{
 
 
 .card-row{
+  padding-bottom: 50px;
   .display-card{
+    margin-bottom: 50px;
     background-color: $white;
     -webkit-box-shadow: 0px 10px 20px -12px rgba(0, 0, 0, 0.18);
     -moz-box-shadow: 0px 10px 20px -12px rgba(0, 0, 0, 0.18);
     box-shadow: 0px 10px 20px -12px rgba(0, 0, 0, 0.18);
     border-radius: 4px;
     overflow: hidden;
-    margin-bottom: 50px;
+
     img{
       width: 100%;
     }
@@ -217,9 +225,26 @@ p{
     }
     p{
       padding: 10px 20px 40px;
+      &.contact-info{
+        padding: 10px 20px 0px;
+        &:last-child{
+          margin-bottom:50px;
+        }
+        i{
+          color: $headings;
+          margin-right: 20px;
+        }
+        a{
+          color: $accent-grey;
+          font-size: 18px;
+          &:hover{
+            color: $headings;
+            text-decoration: none;
+          }
+        }
+      }
     }
   }
-
 }
 
 .display-rows{
@@ -252,6 +277,32 @@ p{
 
   .position{
     font-style: italic;
+  }
+}
+@include media-breakpoint-down(sm) {
+  .card-row{
+    .display-card{
+      p{
+        font-size: 16px;
+        &.contact-info{
+          a{
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-down(sm) {
+  .display-rows{
+    .image_wrapper{
+      width: 100%;
+      display: block;
+    }
+    .text-content{
+      width: 100%;
+      display: block;
+    }
   }
 }
 
@@ -480,6 +531,9 @@ div{
   margin-top: 100px;
 }
 .margin-bottom-50{
+  margin-bottom: 50px;
+}
+.margin-top-50{
   margin-bottom: 50px;
 }
 .lead-in{

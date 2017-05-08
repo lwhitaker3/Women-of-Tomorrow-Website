@@ -16,7 +16,7 @@
     <?php endwhile; ?>
   </div>
 
-  <div class="container container_spacing_bottom">
+  <div class="container">
     <div class="row">
       <div class="col-lg-12 margin-bottom-50">
         <h3>National Board</h3>

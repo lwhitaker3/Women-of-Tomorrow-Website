@@ -1,0 +1,17 @@
+.accountability-list{
+  list-style: none;
+  li{
+    a{
+      font-size: 20px;
+      line-height: 1.5;
+      color: $headings;
+      &:hover{
+        color: $brand-primary;
+        text-decoration: none;
+      }
+    }
+  }
+  i{
+    margin-right: 20px;
+  }
+}

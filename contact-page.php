@@ -19,47 +19,14 @@ $instagram = get_field('wot_instagram_link', 'option');
 
 <?php get_template_part('templates/page', 'intro'); ?>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-6">
-      <div class="row">
-        <div class="col-sm-1">
-          <i class="fa fa-map-marker"></i>
-        </div>
-        <div class="col-sm-11">
-          <p> <?php echo $address ?></p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-1">
-          <i class="fa fa-envelope"></i>
-        </div>
-        <div class="col-sm-11">
-          <p><a href="mailto:<?php echo $email ?>"> <?php echo $email ?></a></p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-1">
-          <i class="fa fa-phone"></i>
-        </div>
-        <div class="col-sm-11">
-          <p> <?php echo $phone ?></p>
-        </div>
-      </div>
-
-    </div>
-    <div class="col-lg-6">
-      <?php echo do_shortcode(get_field('map_short_code')); ?>
-    </div>
+<div class="background">
+  <div class="container">
+    <?php while (have_posts()) : the_post(); ?>
+      <?php get_template_part('templates/page', 'header'); ?>
+    <?php endwhile; ?>
   </div>
-</div>
-
-<?php if( have_rows('location_contact_information', 'option') ): ?>
   <div class="container our_offices">
-    <h2>Our Offices</h2>
-    <div class="row">
+    <div class="row card-row">
 
 
       <?php while( have_rows('location_contact_information', 'option') ): the_row();
@@ -68,39 +35,44 @@ $instagram = get_field('wot_instagram_link', 'option');
         $address = get_sub_field('address');
         $phone = get_sub_field('phone');
         $email = get_sub_field('email');
+        $map = get_sub_field('map_shortcode');
 
       ?>
 
-    <div class="col-lg-4">
-      <div class="contact_card_wrapper">
-        <div class="contact_card_image_wrapper">
-          <?php if($image): ?>
-              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-          <?php endif; ?>
-        </div>
+
+      <div class="col-lg-4">
+        <div class="display-card">
+          <div class="image-wrapper">
+            <?php echo do_shortcode($map); ?>
+          </div>
           <?php if( $location ): ?>
-            <h2><?php echo $location; ?></h2>
+            <h3><?php echo $location; ?></h3>
           <?php endif; ?>
+          <div class="line-decoration"></div>
           <?php if( $address ): ?>
-            <p><i class="fa fa-map-marker"></i> <?php echo $address ?></p>
+            <p class="contact-info"><i class="fa fa-map-marker"></i> <?php echo $address ?></p>
           <?php endif; ?>
           <?php if( $phone ): ?>
-            <p><i class="fa fa-phone"></i> <?php echo $phone ?></p>
+            <p class="contact-info"><i class="fa fa-phone"></i> <?php echo $phone ?></p>
           <?php endif; ?>
           <?php if( $email ): ?>
-            <p><i class="fa fa-envelope"></i><a href="mailto:<?php echo $email ?>"> <?php echo $email ?></a></p>
+            <p class="contact-info"><i class="fa fa-envelope"></i><a href="mailto:<?php echo $email ?>"> <?php echo $email ?></a></p>
           <?php endif; ?>
+        </div>
       </div>
-
-    </div>
     <?php endwhile; ?>
+    </div>
   </div>
 </div>
-<?php endif; ?>
 
 
-<div class="container connect_section">
-  <h2>Connect With Us</h2>
+<div class="container connect_section container_spacing">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="centered">Connect With Us</h2>
+      <div class="heading-underline line-decoration"></div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-sm-12">
 
