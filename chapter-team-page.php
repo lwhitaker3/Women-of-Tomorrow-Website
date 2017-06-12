@@ -46,7 +46,7 @@
               <div class="line-decoration"></div>
       			<?php endif; ?>
             <?php if( $position ): ?>
-              <p><?php echo $position; ?></p>
+              <p class="position"><?php echo $position; ?></p>
             <?php endif; ?>
           </div>
         </div>
@@ -102,9 +102,9 @@
       </div>
   	<?php endwhile; ?>
 
-
+    </div>
 
   <?php endif; ?>
 
-  </div>
+
 </div>

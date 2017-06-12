@@ -1,7 +1,7 @@
 <?php
 // vars
 $location = get_field('chapter_location');
-if( $location ): ?>
+if( $location): ?>
 
 <header class="banner">
 

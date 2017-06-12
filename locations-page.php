@@ -18,12 +18,11 @@
   <div class="container">
     <div class="row cards_row">
 
-      <?php while( have_rows('location_info') ): the_row();
 
-        // vars
-        $image = get_sub_field('location_image');
+      <?php while( have_rows('location_contact_information', 'option') ): the_row();
+        $image = get_sub_field('image');
         $location = get_sub_field('location');
-        $link = get_sub_field('link');
+        $link = get_sub_field('page_link');
 
       ?>
 

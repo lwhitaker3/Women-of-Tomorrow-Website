@@ -31,7 +31,7 @@
         });
 
         $(function() {
-        	$('.mentor_card_no_photo').matchHeight();
+        	$('.display-card.mentor').matchHeight();
         });
 
         $(function() {

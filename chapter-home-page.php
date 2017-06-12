@@ -48,26 +48,31 @@ if( !empty($image) ): ?>
                     <div class="grid-item-width2">
 											<div style="background-image: url('<?php echo $image['url']; ?>')">
 											</div>
-                      <!-- <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" /> -->
                     </div>
+                    <p class="caption"><?php echo $image['caption']; ?></p>
+
                     <?php $i++; ?>
                   <?php elseif($i==4): ?>
                     <div class="grid-item-width2">
 											<div style="background-image: url('<?php echo $image['url']; ?>')">
 											</div>
                     </div>
+                    <p class="caption"><?php echo $image['caption']; ?></p>
+
                     <?php $i++; ?>
                   <?php elseif($i==5):?>
                     <div class="grid-item">
 											<div style="background-image: url('<?php echo $image['url']; ?>')">
 											</div>
                     </div>
+                    <p class="caption"><?php echo $image['caption']; ?></p>
                     <?php $i==0; ?>
                   <?php else:?>
                     <div class="grid-item">
 											<div style="background-image: url('<?php echo $image['url']; ?>')">
 											</div>
                     </div>
+                    <p class="caption"><?php echo $image['caption']; ?></p>
                     <?php $i++; ?>
                   <?php endif; ?>
                 <?php endforeach; ?>

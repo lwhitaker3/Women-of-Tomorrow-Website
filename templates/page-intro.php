@@ -2,14 +2,14 @@
   do_action('get_header');
   get_template_part('templates/header-chapter');
 ?>
+<?php $hero_image = get_field('banner_image');
+?>
+<?php if ($hero_image):?>
+  <div style="background-image: url('<?php echo $hero_image['url']; ?>')" class="header-image-wrapper">
+    <div class="header-overlay"></div>
+  </div>
+<?php endif; ?>
 
-<div class="header-image-wrapper">
-  <?php $image = get_field('page_hero_image');
-  if( !empty($image) ): ?>
-    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-  <?php endif; ?>
-  <div class="header-overlay"></div>
-</div>
 
 <div class="breadcrumbs-wrapper">
   <div class="container">
