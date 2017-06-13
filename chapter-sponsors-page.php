@@ -24,43 +24,38 @@
   		$level = get_sub_field('sponsor_level');
   	?>
 
-      <div class="row">
-		    <div class="col-md-12">
 
-          <?php if( have_rows('sponsor_info') ): ?>
-
-          <h3 class="position"><?php echo $level; ?></h3>
-
-          <?php while( have_rows('sponsor_info') ): the_row();
-            // vars
-            $image = get_sub_field('sponsor_logo');
-            $content = get_sub_field('sponsor_name');
-            $link = get_sub_field('sponsor_link');
-          ?>
-
-          <li class="slide">
-
-            <?php if( $link ): ?>
-              <a href="<?php echo $link; ?>">
-            <?php endif; ?>
-
-              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
-              <?php echo $content; ?>
-            <?php if( $link ): ?>
-              </a>
-            <?php endif; ?>
+      <?php if( have_rows('sponsor_info') ): ?>
+      <h3 class="position"><?php echo $level; ?></h3>
+      <div class="row cards_row">
 
 
+        <?php while( have_rows('sponsor_info') ): the_row();
+          // vars
+          $logo = get_sub_field('sponsor_logo');
+          $content = get_sub_field('sponsor_name');
+          $link = get_sub_field('sponsor_link');
+        ?>
 
-          </li>
-        <?php endwhile; ?>
-        <?php endif; ?>
-
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <a class="card_link" href="<?php echo $link; ?>">
+            <div class="card_wrapper">
+              <div class="card_image_wrapper sponsors">
+                <?php
+                if( !empty($logo) ): ?>
+                	<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
+                <?php endif; ?>
+              </div>
+              <h3 class="margin-bottom-50"><?php echo $content; ?></h3>
+            </div>
+          </a>
         </div>
+        <?php endwhile; ?>
       </div>
-  	<?php endwhile; ?>
 
-    </div>
+      <?php endif; ?>
 
+    <?php endwhile; ?>
+  </div>
   <?php endif; ?>
 </div>

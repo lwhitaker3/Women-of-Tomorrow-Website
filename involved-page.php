@@ -20,7 +20,7 @@
 
     <div class="row cards_row padding-bottom-0">
       <div class="col-lg-12">
-        <a href="#" class="card_link">
+        <a class="card_link" href="<?php the_field('donate_button', 'option'); ?>">
           <div class="card_wrapper">
             <div class="card_image_wrapper">
               <?php
@@ -38,63 +38,64 @@
       </div><!-- /.col-lg-4 -->
     </div>
 
-    <div class="row card-row">
-      <div class="col-lg-6">
-        <div class="display-card">
-          <div class="image-wrapper">
-            <?php  $image2 = get_field('sponsor_event_image');
-            if( !empty($image2) ): ?>
-            	<img src="<?php echo $image2['url']; ?>" alt="<?php echo $image2['alt']; ?>" />
-            <?php endif; ?>
-          </div>
-          <h3>Sponsor an Event</h3>
-          <div class="line-decoration"></div>
-          <p class="card_text"><?php the_field('sponsor_event_text'); ?></p>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="display-card">
-          <div class="image-wrapper">
-            <?php  $image3 = get_field('sponsor_field_trip_image');
-            if( !empty($image3) ): ?>
-              <img src="<?php echo $image3['url']; ?>" alt="<?php echo $image3['alt']; ?>" />
-            <?php endif; ?>
-          </div>
-          <h3>Sponsor a Field Trip</h3>
-          <div class="line-decoration"></div>
-          <p class="card_text"><?php the_field('sponsor_field_trip_text'); ?></p>
-        </div>
-      </div>
-    </div>
+    <?php if( have_rows('ways_to_get_involved') ): ?>
 
-    <div class="row card-row">
-      <div class="col-lg-6">
-        <div class="display-card">
-          <div class="image-wrapper">
-            <?php  $image2 = get_field('sponsor_event_image');
-            if( !empty($image2) ): ?>
-            	<img src="<?php echo $image2['url']; ?>" alt="<?php echo $image2['alt']; ?>" />
+	     <div class="row card-row cards_row">
+
+	      <?php while( have_rows('ways_to_get_involved') ): the_row();
+
+    		// vars
+          $title = get_sub_field('title');
+      		$image2 = get_sub_field('image');
+      		$content = get_sub_field('info_about_getting_involved');
+      		$link = get_sub_field('link');
+
+    		?>
+
+        <?php if( empty($link)): ?>
+
+
+          <div class="col-lg-6">
+            <div class="display-card">
+              <div class="image-wrapper">
+                <?php if( !empty($image2) ): ?>
+                	<img src="<?php echo $image2['url']; ?>" alt="<?php echo $image2['alt']; ?>" />
+                <?php endif; ?>
+              </div>
+              <h3><?php echo $title; ?></h3>
+              <div class="line-decoration"></div>
+              <p class="card_text"><?php echo $content; ?></p>
+            </div>
+          </div>
+
+        <?php else: ?>
+
+          <div class="col-lg-6">
+            <?php if( $link ): ?>
+              <a class="card_link" href="<?php echo $link; ?>">
+                <?php endif; ?>
+                <div class="card_wrapper">
+                  <div class="card_image_wrapper">
+                    <?php if($image2): ?>
+                      	<img src="<?php echo $image2['url']; ?>" alt="<?php echo $image2['alt']; ?>" />
+                    <?php endif; ?>
+                  </div>
+                  <h3><?php echo $title; ?></h3>
+                  <div class="line-decoration"></div>
+                  <p class="card_text"><?php echo $content; ?></p>
+                  <div class="btn btn-secondary">Learn More</div>
+                </div>
+                <?php if( $link ): ?>
+              </a>
             <?php endif; ?>
           </div>
-          <h3>Sponsor an Event</h3>
-          <div class="line-decoration"></div>
-          <p class="card_text"><?php the_field('sponsor_event_text'); ?></p>
+
+        <?php endif; ?>
+
+
+        <?php endwhile; ?>
         </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="display-card">
-          <div class="image-wrapper">
-            <?php  $image3 = get_field('sponsor_field_trip_image');
-            if( !empty($image3) ): ?>
-              <img src="<?php echo $image3['url']; ?>" alt="<?php echo $image3['alt']; ?>" />
-            <?php endif; ?>
-          </div>
-          <h3>Sponsor a Field Trip</h3>
-          <div class="line-decoration"></div>
-          <p class="card_text"><?php the_field('sponsor_field_trip_text'); ?></p>
-        </div>
-      </div>
-    </div>
+        <?php endif; ?>
 
   </div>
 

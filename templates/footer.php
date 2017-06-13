@@ -38,7 +38,7 @@ $instagram = get_field('wot_instagram_link', 'option');
       <div class="col-lg-4">
         <h3>Join Us for a Better Tomorrow!</h3>
         <p>Sign up for our newsletter to recieve updates and stay involved</p>
-        <a class="btn btn-primary">Subscribe to Newsletter</a>
+        <a class="btn btn-primary" href="<?php the_field('newsletter_link', 'option'); ?>">Subscribe to Newsletter</a>
       </div>
     </div>
 

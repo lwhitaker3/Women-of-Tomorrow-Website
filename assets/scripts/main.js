@@ -189,7 +189,16 @@
           arrows: false,
           dots: false,
           autoplay: true,
-          autoplaySpeed: 5000
+          autoplaySpeed: 5000,
+          responsive: [
+           {
+             breakpoint: 600,
+             settings: {
+               slidesToShow: 2,
+               slidesToScroll: 1
+             }
+           }
+         ]
         });
 
         // var options = {

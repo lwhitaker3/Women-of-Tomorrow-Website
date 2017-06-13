@@ -49,7 +49,7 @@ if( !empty($image) ): ?>
 											<div style="background-image: url('<?php echo $image['url']; ?>')">
 											</div>
                     </div>
-                    <p class="caption"><?php echo $image['caption']; ?></p>
+
 
                     <?php $i++; ?>
                   <?php elseif($i==4): ?>
@@ -57,7 +57,7 @@ if( !empty($image) ): ?>
 											<div style="background-image: url('<?php echo $image['url']; ?>')">
 											</div>
                     </div>
-                    <p class="caption"><?php echo $image['caption']; ?></p>
+
 
                     <?php $i++; ?>
                   <?php elseif($i==5):?>
@@ -65,14 +65,14 @@ if( !empty($image) ): ?>
 											<div style="background-image: url('<?php echo $image['url']; ?>')">
 											</div>
                     </div>
-                    <p class="caption"><?php echo $image['caption']; ?></p>
+
                     <?php $i==0; ?>
                   <?php else:?>
                     <div class="grid-item">
 											<div style="background-image: url('<?php echo $image['url']; ?>')">
 											</div>
                     </div>
-                    <p class="caption"><?php echo $image['caption']; ?></p>
+
                     <?php $i++; ?>
                   <?php endif; ?>
                 <?php endforeach; ?>

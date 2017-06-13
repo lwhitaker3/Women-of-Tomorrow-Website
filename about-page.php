@@ -73,5 +73,14 @@
       </div><!-- /.col-lg-4 -->
 
     </div>
+    <div>
+      <div class="page-header">
+        <h3>Social Feed</h3>
+        <div class="heading-underline line-decoration"></div>
+      </div>
+      <script src="//assets.juicer.io/embed.js" type="text/javascript"></script>
+      <link href="//assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />
+      <ul class="juicer-feed" data-feed-id="<?php the_field('juicer_feed_name'); ?>"><h1 class="referral"><a href="https://www.juicer.io">Powered by Juicer</a></h1></ul>
+    </div>
   </div>
 </div>

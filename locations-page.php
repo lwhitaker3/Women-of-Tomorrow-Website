@@ -13,7 +13,7 @@
     <?php endwhile; ?>
   </div>
 
-  <?php if( have_rows('location_info') ): ?>
+  <?php if( have_rows('location_contact_information', 'option') ): ?>
 
   <div class="container">
     <div class="row cards_row">

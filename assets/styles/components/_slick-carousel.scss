@@ -1,3 +1,5 @@
+
+
 $slick-font-family: FontAwesome !default;
 $slick-arrow-color: $accent-grey !default;
 $slick-dot-color: black !default;
@@ -12,6 +14,11 @@ $slick-opacity-not-active: 0.25 !default;
 .slider {
   margin: auto;
   width: 400px;
+}
+@include media-breakpoint-down(sm) {
+  .slider {
+    width: 300px;
+  }
 }
 
 .slider-image-wrapper {

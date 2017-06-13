@@ -25,6 +25,7 @@ $location = get_field('event_location');
 
         if( $images ): ?>
             <div class="event_images">
+              <p class="location">Photos</p>
                 <?php
                   $imageSize = count($images);
                   for( $i=0; $i<3 && $i<$imageSize; $i++ ):

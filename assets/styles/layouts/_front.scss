@@ -1,6 +1,6 @@
 
 .instagram-image{
-  width: 10%;
+  width: 20%;
   position: relative;
   display: inline-block;
   &:hover .likes{
@@ -21,4 +21,9 @@
     width: 100%;
   }
 
+}
+@include media-breakpoint-up(sm) {
+  .instagram-image{
+    width: 10%;
+  }
 }
