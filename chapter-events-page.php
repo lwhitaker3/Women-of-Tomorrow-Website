@@ -48,7 +48,7 @@
 
 
             <?php endwhile; wp_reset_postdata(); ?>
-            <<?php else: ?>
+            <?php else: ?>
               <p class="no-upcoming">No Upcoming Events</p>
             <?php endif; ?>
           </div>
@@ -79,7 +79,7 @@
             	<img src="<?php echo $eventimage['url']; ?>" alt="<?php echo $eventimage['alt']; ?>" />
             <?php endif; ?>
             <h3><?php the_field('event_name'); ?></h3>
-            <?php if (!empty(the_field('event_name'))): ?><div class="line-decoration"></div> <?php endif; ?>
+            <?php if (!empty(get_field('event_name'))): ?><div class="line-decoration"></div> <?php endif; ?>
             <p class="date"><?php the_field('event_date'); ?></p>
             <p class="description"><?php the_field('event_description'); ?></p>
           </div>
